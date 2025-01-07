@@ -85,8 +85,6 @@ programs.hyprland.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
 neovim
 brave
 curl
@@ -96,10 +94,19 @@ wget
 git
 
 #Hyprland
-pkgs.kitty
-  
+hyprpaper
+dunst
+kitty
+networkmanagerapplet
+ waybar 
+ dolphin
+ rofi-wayland
 ];
 
+xdg.portal = {
+enable = true;
+extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+};
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
