@@ -10,6 +10,11 @@
       ./hardware-configuration.nix
     ];
 
+    fileSystems."/data" =
+    { device = "/dev/disk/by-label/SSD-1TB";
+      fsType = "vfat";
+    };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -53,7 +58,7 @@ services.pipewire = {
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us";
+    layout = "latin,us";
     variant = "";
   };
 
@@ -64,7 +69,7 @@ fonts.packages = with pkgs; [ nerdfonts ];
   users.users.lucas = {
     isNormalUser = true;
     description = "lucas";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [];
   };
 
@@ -74,6 +79,7 @@ fonts.packages = with pkgs; [ nerdfonts ];
 
 hardware.graphics.enable = true;
 services.xserver.videoDrivers = ["nvidia"];
+hardware.nvidia-container-toolkit.enable = true;
 hardware.nvidia = {
 modesetting.enable = true;
 powerManagement.enable = false;
@@ -91,20 +97,39 @@ sync.enable = true;
 programs.hyprland.enable = true;
 environment.variables.NIXOS_OZONE_WL = "1";
 
+  nix.gc.automatic = true;
+	  nix.gc.dates = "03:15";
 nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
+
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = [ "git" "python" "man" ];
+    theme = "agnoster";
+  };
+
+programs.neovim = {
+  enable = true;
+  defaultEditor = true;
+  viAlias = true;
+  vimAlias = true;
+};
+
+virtualisation.docker.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-neovim
+#neovim
 brave
 curl
 fzf
 ripgrep
 wget
 git
+jq
 
 #Hyprland
 hyprpaper
