@@ -27,6 +27,15 @@
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
+  security.rtkit.enable = true;
+services.pipewire = {
+  enable = true;
+  alsa.enable = true;
+  alsa.support32Bit = true;
+  pulse.enable = true;
+  # If you want to use JACK applications, uncomment this
+  #jack.enable = true;
+};
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -82,6 +91,10 @@ sync.enable = true;
 programs.hyprland.enable = true;
 environment.variables.NIXOS_OZONE_WL = "1";
 
+nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -103,6 +116,7 @@ networkmanagerapplet
  rofi-wayland
 ];
 
+# Files, browser, screen sharing stuff
 xdg.portal = {
 enable = true;
 extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
