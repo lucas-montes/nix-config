@@ -10,6 +10,9 @@
       ./hardware-configuration.nix
     ];
 
+services.udisks2.enable = true;
+
+
     fileSystems."/data" =
     { device = "/dev/disk/by-label/SSD-1TB";
       fsType = "vfat";
@@ -22,12 +25,13 @@
   networking.hostName = "luctop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
+# Configure network proxy if necessary
+ # networking.proxy.default = "192.168.1.16";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.networkmanager.insertNameservers = [ "192.168.1.16" ];
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -62,6 +66,7 @@ services.pipewire = {
     variant = "";
   };
 
+#TODO: use only the necessary ones
 fonts.packages = with pkgs; [ nerdfonts ];
 
 
@@ -116,6 +121,9 @@ programs.neovim = {
   viAlias = true;
   vimAlias = true;
 };
+
+programs.seahorse.enable = true;
+services.gnome.gnome-keyring = { enable = true; };
 
 virtualisation.docker.enable = true;
 
