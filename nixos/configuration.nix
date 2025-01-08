@@ -8,7 +8,16 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+          inputs.home-manager.nixosModules.home-manager
     ];
+
+ home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      lucas = import ../home-manager/home.nix;
+    };
+  };
 
 services.udisks2.enable = true;
 

@@ -33,10 +33,20 @@
  #   "Xft.dpi" = 172;
  # };
 
-  programs.zsh.ohMyZsh = {
+  programs.zsh = {
+    enable = true;
+     enableCompletion = true;
+  autosuggestion.enable = true;
+  syntaxHighlighting.enable = true;
+  shellAliases = {
+    ll = "ls -l";
+    update = "sudo nixos-rebuild switch --flake";
+  };
+    oh-my-zsh = {
     enable = true;
     plugins = [ "git" "python" "man" ];
     theme = "agnoster";
+  };
   };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
@@ -55,6 +65,15 @@
     userEmail = "lluc23@hotmail.com";
   };
 
+  programs.neovim = {
+  enable = true;
+  defaultEditor = true;
+};
+
+  programs.neovim.plugins = [
+   pkgs.vimPlugins.nvim-treesitter
+   pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+ ];
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
