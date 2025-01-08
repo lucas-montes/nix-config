@@ -1,10 +1,17 @@
-{ config, pkgs, ... }:
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  # TODO please change the username & home directory to your own
   home.username = "lucas";
   home.homeDirectory = "/home/lucas";
 
+  nixpkgs.config.allowUnfree = true;
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
 
@@ -26,6 +33,11 @@
  #   "Xft.dpi" = 172;
  # };
 
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = [ "git" "python" "man" ];
+    theme = "agnoster";
+  };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     neofetch
@@ -43,18 +55,8 @@
     userEmail = "lluc23@hotmail.com";
   };
 
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-    # TODO add your custom bashrc here
-    bashrcExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    '';
-
-    # set some aliases, feel free to add more or remove some
-    shellAliases = {
-    };
-  };
+  # Nicely reload system units when changing configs
+  systemd.user.startServices = "sd-switch";
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
