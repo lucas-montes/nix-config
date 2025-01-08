@@ -7,11 +7,17 @@ nixpkgs.url = "nixpkgs/nixos-24.11";
 
 outputs = {self, nixpkgs, ... }:
 	let 
-	  lib = nixpkgs.lib;
+system = "x86_64-linux";
+	  pkgs = import nixpkgs {
+inherit system;
+config = {
+allowUnfree = true;
+};
+	  };
 	in {
 	nixosConfigurations = {
-		luctop = lib.nixosSystem {
-system = "x86_64-linux";
+		luctop = nixpkgs.lib.nixosSystem {
+		specialArgs = { inherit system; };
 modules = [./configuration.nix ];
 		};
 	};
