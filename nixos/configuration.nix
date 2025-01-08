@@ -8,16 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-          inputs.home-manager.nixosModules.home-manager
     ];
 
- home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
-    users = {
-      # Import your home-manager configuration
-      lucas = import ../home-manager/home.nix;
-    };
-  };
 
 services.udisks2.enable = true;
 
@@ -154,9 +146,10 @@ networkmanagerapplet
  rofi-wayland
 ];
 
-
+programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lucas = {
+  shell = pkgs.zsh;
     isNormalUser = true;
     description = "lucas";
     extraGroups = [ "networkmanager" "wheel" "docker" ];

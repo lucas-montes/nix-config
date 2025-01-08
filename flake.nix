@@ -6,7 +6,7 @@
     nixpkgs.url = "nixpkgs/nixos-24.11";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
-#    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     # Home manager
@@ -53,8 +53,22 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/configuration.nix
+          home-manager.nixosModules.home-manager {
+
+ home-manager = {
+ #useUserPackages = true;
+ #useGlobalPkgs = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      lucas = import ./home-manager/home.nix;
+    };
+  };
+	  }
         ];
       };
     };
+
+
   };
 }
