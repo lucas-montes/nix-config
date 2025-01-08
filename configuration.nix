@@ -72,14 +72,6 @@ services.pipewire = {
 fonts.packages = with pkgs; [ nerdfonts ];
 
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.lucas = {
-    isNormalUser = true;
-    description = "lucas";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -150,6 +142,16 @@ networkmanagerapplet
  dolphin
  rofi-wayland
 ];
+
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.lucas = {
+    isNormalUser = true;
+    description = "lucas";
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    packages = with pkgs; [];
+  };
+
 
 # Files, browser, screen sharing stuff
 xdg.portal = {
