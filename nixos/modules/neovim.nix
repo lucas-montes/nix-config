@@ -15,7 +15,7 @@ enable = true;
 name = "dracula";
 
 };
-stautsline.lualine.enable = true;
+# stautsline.lualine.enable = true;
 telescope.enable = true;
 autocomplete.nvim-cmp.enable = true;
 

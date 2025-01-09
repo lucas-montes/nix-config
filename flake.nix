@@ -45,6 +45,7 @@
         };
 
         modules = [
+      nvf.nixosModules.default
           ./hosts/${hostname}/configuration.nix
         ];
       };
@@ -68,7 +69,7 @@
       };
 
       modules = [
-      nvf.homeManagerModules.default
+      
         ./home-manager/home.nix
       ];
     };
