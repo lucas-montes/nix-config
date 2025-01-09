@@ -18,18 +18,10 @@
         r = "ranger";
         v = "nvim";
         se = "sudoedit";
-        microfetch = "microfetch && echo";
-
-        gs = "git status";
-        ga = "git add";
-        gc = "git commit";
-        gp = "git push";
-
-        ".." = "cd ..";
       };
 
     history.size = 10000;
-    history.path = "${config.xdg.dataHome}/zsh/history";
+    history.path = "$HOME/dump/zsh/history";
 
     initExtra = ''
       # Start Tmux automatically if not already running. No Tmux in TTY

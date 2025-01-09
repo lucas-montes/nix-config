@@ -1,13 +1,10 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-gzip
-brave
 curl
-fzf
-ripgrep
 wget
 git
-jq
+    vscode
+    brave
 
 #Hyprland
 # hyprpaper

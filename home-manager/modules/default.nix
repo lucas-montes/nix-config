@@ -6,6 +6,7 @@
     ./hyprland
     ./lazygit.nix
     ./neovim.nix
+    ./qt.nix
     ./ranger.nix
     ./stylix.nix
     ./swaync
