@@ -2,7 +2,6 @@
   description = "My system configuration";
 
   inputs = {
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
     home-manager = {
@@ -10,41 +9,52 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    stylix.url = "github:danth/stylix";
+    nvf.url = "github:notashelf/nvf";
 
-    # COMING SOON...
-    #nixvim = {
-    #  url = "github:nix-community/nixvim";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = {
+    nixpkgs,
+    home-manager,
+    nvf,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     user = "lucas";
     hosts = [
-      { hostname = "luctop"; stateVersion = "24.11"; }
+      {
+        hostname = "luctop";
+        stateVersion = "24.11";
+      }
     ];
 
-    makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
-      system = system;
-      specialArgs = {
-        inherit inputs stateVersion hostname user;
+    makeSystem = {
+      hostname,
+      stateVersion,
+    }:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit inputs stateVersion hostname user;
+        };
+
+        modules = [
+          ./hosts/${hostname}/configuration.nix
+        ];
       };
-
-      modules = [
-        ./hosts/${hostname}/configuration.nix
-      ];
-    };
-
   in {
     nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
-      configs // {
+      configs
+      // {
         "${host.hostname}" = makeSystem {
           inherit (host) hostname stateVersion;
         };
-      }) {} hosts;
+      }) {}
+    hosts;
+
+    formatter.x86_64-linux = nixpkgs.legacyPackages.${system}.alejandra;
 
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
@@ -53,6 +63,7 @@
       };
 
       modules = [
+        nvf.homeManagerModules.default
         ./home-manager/home.nix
       ];
     };
