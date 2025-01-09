@@ -9,7 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf.url = "github:notashelf/nvf";
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     stylix.url = "github:danth/stylix";
   };
@@ -23,6 +26,7 @@
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     user = "lucas";
+      pkgs = nixpkgs.legacyPackages.${system};
     hosts = [
       {
         hostname = "luctop";
@@ -45,6 +49,7 @@
         ];
       };
   in {
+
     nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
       configs
       // {
@@ -54,16 +59,16 @@
       }) {}
     hosts;
 
-    formatter.x86_64-linux = nixpkgs.legacyPackages.${system}.alejandra;
+    formatter.x86_64-linux = pkgs.alejandra;
 
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
+        inherit pkgs;
       extraSpecialArgs = {
         inherit inputs homeStateVersion user;
       };
 
       modules = [
-        nvf.homeManagerModules.default
+      nvf.homeManagerModules.default
         ./home-manager/home.nix
       ];
     };

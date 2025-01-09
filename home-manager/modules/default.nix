@@ -3,7 +3,6 @@
     ./git.nix
     ./hyprland
     ./lazygit.nix
-    ./neovim.nix
     ./qt.nix
     ./stylix.nix
     ./swaync

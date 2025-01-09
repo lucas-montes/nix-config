@@ -1,11 +1,33 @@
-{ pkgs, ... }: {
-  programs.neovim = {
+{ inputs, ... }: {
+  # imports = [ inputs.home-manager.nixosModules.default ];
+  programs.nvf = {
     enable = true;
-    extraPackages = with pkgs; [
-      lua-language-server
-      python312Packages.python-lsp-server
-      nixd
-      vimPlugins.nvim-treesitter-parsers.hyprlang
-    ];
+    # your settings need to go into the settings attribute set
+    # most settings are documented in the appendix
+    settings = {
+      vim = {
+        lsp = {
+        enable = true;
+      };
+        viAlias = true;vimAlias = true;
+theme = {
+enable = true;
+name = "dracula";
+
+};
+stautsline.lualine.enable = true;
+telescope.enable = true;
+autocomplete.nvim-cmp.enable = true;
+
+languages = {
+enableLSP = true;
+enableTreesitter = true;
+nix.enable = true;
+rust.enable = true;
+python = { enable = true; format.enable = true; };
+};
+};
+
+    };
   };
 }
