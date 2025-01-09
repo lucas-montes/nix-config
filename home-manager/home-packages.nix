@@ -13,9 +13,11 @@
 
     nodejs
     python312
-
+ rustc
+    cargo
     # WM stuff
     playerctl
     libnotify
+    pavucontrol
   ];
 }

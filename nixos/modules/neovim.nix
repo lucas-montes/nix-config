@@ -20,11 +20,13 @@ telescope.enable = true;
 autocomplete.nvim-cmp.enable = true;
 
 languages = {
+          enableExtraDiagnostics = true;
+          enableFormat = true;
 enableLSP = true;
 enableTreesitter = true;
 nix.enable = true;
 rust.enable = true;
-python = { enable = true; format.enable = true; };
+python.enable = true;
 };
 };
 

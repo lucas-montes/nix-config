@@ -6,16 +6,26 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 20;
-        modules-left = ["hyprland/workspaces"];
-        modules-center = ["hyprland/window"];
-        modules-right = ["pulseaudio" "battery" "clock" "tray"];
+  height = 14;
+  margin-top = 8;
+  margin-bottom = -10;
+        modules-left = [
+
+  ];
+
+  modules-center = ["hyprland/workspaces"];
+  modules-right = ["tray" "network" "pulseaudio" "clock"];
+
+
+ "clock" = {
+          format = "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%H:%M}";
+          format-alt = "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%A %B de %Y}";
+        };
 
         "hyprland/workspaces" = {
-          disable-scroll = true;
-          show-special = true;
-          special-visible-only = true;
-          all-outputs = false;
+          active-only = false;
+          all-outputs = true;
+          disable-scroll = false;   
           format = "{icon}";
           format-icons = {
             "1" = "";
@@ -25,11 +35,12 @@
             "5" = "";
             "6" = "";
             "magic" = "";
+            "urgent"= "";
+			"active"="";
+			"default"= "";
+    sort-by-number= true;
           };
 
-          persistent-workspaces = {
-            "*" = 3;
-          };
         };
 
         "pulseaudio" = {
@@ -48,26 +59,29 @@
           on-click = "pavucontrol";
         };
 
-        "battery" = {
-          states = {
-            warning = 30;
-            critical = 1;
-          };
-          format = "{icon} {capacity}%";
-          format-charging = " {capacity}%";
-          format-alt = "{time} {icon}";
-          format-icons = ["" "" "" "" ""];
-        };
+         "battery" = {
+    states = {
+      good = 95;
+      warning = 30;
+      critical = 15;
+    };
+    format = "{icon}  {capacity}%";
+    format-charging = "{capacity}% ";
+    format-plugged = "{capacity}% ";
+    format-alt = "{icon} {time}";
+    format-icons = ["" "" "" "" ""];
+  };
 
-        "clock" = {
-          format = "{:%d.%m.%Y - %H:%M}";
-          format-alt = "{:%A, %B %d at %R}";
-        };
+  "network" = {
+   format-ethernet = "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ipaddr}";
+    format-linked = "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ifname} (No IP)";
+  };
 
-        "tray" = {
-          icon-size = 14;
-          spacing = 1;
-        };
+  "tray" = {
+    icon-size = 16;
+    spacing = 5;
+  };
+
       };
     };
   };

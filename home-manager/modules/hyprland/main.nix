@@ -27,17 +27,13 @@
 
       general = {
         gaps_in = 5;
-        gaps_out = 5;
+        gaps_out = 15;
 
-        border_size = 2;
+        border_size = 1;
 
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.active_border" = "rgb(11111B)";
         "col.inactive_border" = "rgba(595959aa)";
-
-        resize_on_border = true;#false
-
-        allow_tearing = false;
-        layout = "master";#dwindle
+layout = "dwindle";
       };
 
       decoration = {
@@ -49,16 +45,15 @@
 
         shadow = {
           enabled = false;
-          range = 4;
-        render_power = 3;
-        color = "rgba(1a1a1aee)";
+          range = 15;
+        render_power = 2;
+        color = "0x66000000";
         };
 
         blur = {
           enabled = false;
-          size = 3;
-        passes = 1;
-        vibrancy = 0.1696;
+          size = 4;
+        passes = 2;
         };
       };
 
@@ -83,38 +78,14 @@
       };
 
       master = {
-        new_status = "slave";#master and remove below
-        new_on_top = true;
-        mfact = 0.5;
+        new_status = "master";
       };
 
       misc = {
-        force_default_wallpaper = 0;
-        disable_hyprland_logo = true;
+        force_default_wallpaper = -1;
+        disable_hyprland_logo = false;
       };
 
-      windowrulev2 = [
-        "bordersize 0, floating:0, onworkspace:w[t1]"
-
-        "float,class:(mpv)|(imv)|(showmethekey-gtk)"
-        "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
-        "noborder,nofocus,class:(showmethekey-gtk)"
-
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-
-        "opacity 0.0 override, class:^(xwaylandvideobridge)$"
-        "noanim, class:^(xwaylandvideobridge)$"
-        "noinitialfocus, class:^(xwaylandvideobridge)$"
-        "maxsize 1 1, class:^(xwaylandvideobridge)$"
-        "noblur, class:^(xwaylandvideobridge)$"
-        "nofocus, class:^(xwaylandvideobridge)$"
-      ];
-
-      workspace = [
-        "w[tv1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
-      ];
     };
   };
 }
