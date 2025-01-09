@@ -7,7 +7,7 @@
 
     oh-my-zsh = {
     enable = true;
-    plugins = [ "git" "you-should-use" "virtualenv" "direnv" ];
+    plugins = [ "git" "virtualenv" "direnv" ];
     theme = "agnoster";
   };
 
