@@ -1,5 +1,4 @@
-{ inputs, ... }: {
-  # imports = [ inputs.home-manager.nixosModules.default ];
+{
   programs.nvf = {
     enable = true;
     # your settings need to go into the settings attribute set
@@ -7,29 +6,28 @@
     settings = {
       vim = {
         lsp = {
-        enable = true;
-      };
-        viAlias = true;vimAlias = true;
-theme = {
-enable = true;
-name = "dracula";
+          enable = true;
+        };
+        viAlias = true;
+        vimAlias = true;
+        theme = {
+          enable = true;
+          name = "dracula";
+        };
+        # stautsline.lualine.enable = true;
+        telescope.enable = true;
+        autocomplete.nvim-cmp.enable = true;
 
-};
-# stautsline.lualine.enable = true;
-telescope.enable = true;
-autocomplete.nvim-cmp.enable = true;
-
-languages = {
+        languages = {
           enableExtraDiagnostics = true;
           enableFormat = true;
-enableLSP = true;
-enableTreesitter = true;
-nix.enable = true;
-rust.enable = true;
-python.enable = true;
-};
-};
-
+          enableLSP = true;
+          enableTreesitter = true;
+          nix.enable = true;
+          rust.enable = true;
+          python.enable = true;
+        };
+      };
     };
   };
 }

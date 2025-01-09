@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -7,7 +7,7 @@
 
     oh-my-zsh = {
     enable = true;
-    plugins = [ "git" "you-should-use" "virtualenv" ];
+    plugins = [ "git" "you-should-use" "virtualenv" "direnv" ];
     theme = "agnoster";
   };
 

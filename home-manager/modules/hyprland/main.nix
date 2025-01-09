@@ -33,7 +33,7 @@
 
         "col.active_border" = "rgb(11111B)";
         "col.inactive_border" = "rgba(595959aa)";
-layout = "dwindle";
+        layout = "dwindle";
       };
 
       decoration = {
@@ -46,14 +46,14 @@ layout = "dwindle";
         shadow = {
           enabled = false;
           range = 15;
-        render_power = 2;
-        color = "0x66000000";
+          render_power = 2;
+          color = "0x66000000";
         };
 
         blur = {
           enabled = false;
           size = 4;
-        passes = 2;
+          passes = 2;
         };
       };
 
@@ -69,7 +69,7 @@ layout = "dwindle";
       gestures = {
         workspace_swipe = true;
         workspace_swipe_invert = false;
-        workspace_swipe_forever	= true;
+        workspace_swipe_forever = true;
       };
 
       dwindle = {
@@ -85,7 +85,6 @@ layout = "dwindle";
         force_default_wallpaper = -1;
         disable_hyprland_logo = false;
       };
-
     };
   };
 }
