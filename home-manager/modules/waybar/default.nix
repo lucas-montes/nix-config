@@ -6,10 +6,11 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 20;
         modules-left = ["hyprland/workspaces"];
         modules-center = ["hyprland/window"];
-        modules-right = ["hyprland/language" "custom/weather" "pulseaudio" "battery" "clock" "tray"];
+        modules-right = ["pulseaudio" "battery" "clock" "tray"];
+
         "hyprland/workspaces" = {
           disable-scroll = true;
           show-special = true;
@@ -20,32 +21,15 @@
             "1" = "";
             "2" = "";
             "3" = "";
-            "4" = "";
-            "5" = "";
-            "6" = "";
-            "7" = "";
-            "8" = "";
-            "9" = "";
+            "4" = "";
+            "5" = "";
+            "6" = "";
             "magic" = "";
           };
 
           persistent-workspaces = {
-            "*" = 9;
+            "*" = 3;
           };
-        };
-
-        "hyprland/language" = {
-          format-en = "🇺🇸";
-          format-ru = "🇷🇺";
-          min-length = 5;
-          tooltip = false;
-        };
-
-        "custom/weather" = {
-          format = " {} ";
-          exec = "curl -s 'wttr.in/Tashkent?format=%c%t'";
-          interval = 300;
-          class = "weather";
         };
 
         "pulseaudio" = {

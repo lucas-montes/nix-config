@@ -8,11 +8,10 @@
       "$mainMod,       F, togglefloating,"
       "$mainMod,       A, exec, $menu --show drun"
       "$mainMod,       P, pseudo,"
-      "$mainMod,       J, togglesplit,"
+      "$mainMod,       S, togglesplit,"
       # "$mainMod,       N, exec, pkill -SIGUSR2 waybar"
       # "$mainMod SHIFT, W, exec, pkill -SIGUSR1 waybar"
-      "$mainMod,       L, exec, loginctl lock-session"
-      "$mainMod,       P, exec, hyprpicker -an"
+      #"$mainMod,       L, exec, loginctl lock-session"
       "$mainMod,       N, exec, swaync-client -t"
       ", Print, exec, grimblast --notify --freeze copysave area"
 

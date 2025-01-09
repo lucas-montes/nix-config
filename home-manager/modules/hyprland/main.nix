@@ -16,7 +16,7 @@
       monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
-      "$fileManager" = "$terminal -e sh -c 'ranger'";
+      "$fileManager" = "dolphin";
       "$menu" = "wofi";
 
       exec-once = [
