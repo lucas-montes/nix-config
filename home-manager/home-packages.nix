@@ -15,10 +15,10 @@
     python312
 
     # WM stuff
+    playerctl
     # libsForQt5.xwaylandvideobridge
     libnotify
     # xdg-desktop-portal-gtk
     # xdg-desktop-portal-hyprland
-
   ];
 }

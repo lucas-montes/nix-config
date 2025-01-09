@@ -13,7 +13,7 @@
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
       ];
 
-      #monitor = ",1920x1080@60,auto,1";
+      monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
       "$fileManager" = "$terminal -e sh -c 'ranger'";
@@ -26,32 +26,39 @@
       ];
 
       general = {
-        gaps_in = 0;
-        gaps_out = 0;
+        gaps_in = 5;
+        gaps_out = 5;
 
-        border_size = 5;
+        border_size = 2;
 
-        "col.active_border" = "rgba(d65d0eff) rgba(98971aff) 45deg";
-        "col.inactive_border" = "rgba(3c3836ff)";
+        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.inactive_border" = "rgba(595959aa)";
 
-        resize_on_border = true;
+        resize_on_border = true;#false
 
         allow_tearing = false;
-        layout = "master";
+        layout = "master";#dwindle
       };
 
       decoration = {
-        rounding = 0;
+        rounding = 10;
+        # rounding_power = 2;
 
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
         shadow = {
           enabled = false;
+          range = 4;
+        render_power = 3;
+        color = "rgba(1a1a1aee)";
         };
 
         blur = {
           enabled = false;
+          size = 3;
+        passes = 1;
+        vibrancy = 0.1696;
         };
       };
 
@@ -61,7 +68,7 @@
 
       input = {
         kb_layout = "us,latin";
-        kb_options = "grp:caps_toggle";
+        # kb_options = "grp:caps_toggle";
       };
 
       gestures = {
@@ -76,7 +83,7 @@
       };
 
       master = {
-        new_status = "slave";
+        new_status = "slave";#master and remove below
         new_on_top = true;
         mfact = 0.5;
       };
@@ -92,13 +99,6 @@
         "float,class:(mpv)|(imv)|(showmethekey-gtk)"
         "move 990 60,size 900 170,pin,noinitialfocus,class:(showmethekey-gtk)"
         "noborder,nofocus,class:(showmethekey-gtk)"
-
-        "workspace 3,class:(obsidian)"
-        "workspace 3,class:(zathura)"
-        "workspace 4,class:(com.obsproject.Studio)"
-        "workspace 5,class:(telegram)"
-        "workspace 5,class:(vesktop)"
-        "workspace 6,class:(teams-for-linux)"
 
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"

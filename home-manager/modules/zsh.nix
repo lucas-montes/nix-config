@@ -5,6 +5,13 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
+    oh-my-zsh = {
+    enable = true;
+    plugins = [ "git" ];
+    theme = "agnoster";
+  };
+
+
     shellAliases =
       let
         flakeDir = "~/flake";
@@ -15,7 +22,6 @@
 
         pkgs = "nvim ${flakeDir}/nixos/packages.nix";
 
-        r = "ranger";
         v = "nvim";
         se = "sudoedit";
       };

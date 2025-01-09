@@ -11,19 +11,13 @@
 
   networking.hostName = hostname;
 
+# TODO: maybe move this to the user home-manager
     # Configure keymap in X11
   services.xserver.xkb = {
     layout = "latin,us";
     variant = "";
   };
 
-#TODO: use only the necessary ones
-fonts.packages = with pkgs; [ nerdfonts ];
-
-  # Allow unfree packages
-nixpkgs.config.allowUnfree = true;
-programs.hyprland.enable = true;
-environment.variables.NIXOS_OZONE_WL = "1";
 programs.neovim = {
   enable = true;
   defaultEditor = true;
