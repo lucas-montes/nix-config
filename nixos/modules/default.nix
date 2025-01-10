@@ -10,7 +10,6 @@
     ./mime.nix
     ./net.nix
     ./neovim.nix
-    ./nh.nix
     ./nix.nix
     ./nvidia.nix
     ./storage.nix

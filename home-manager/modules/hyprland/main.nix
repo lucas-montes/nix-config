@@ -58,7 +58,8 @@
       };
 
       input = {
-        kb_layout = "us,latin";
+        kb_layout = "us,latam";
+        kb_options = "grp:alt_shift_toggle";
       };
 
       gestures = {

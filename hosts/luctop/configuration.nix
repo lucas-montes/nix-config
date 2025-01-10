@@ -17,7 +17,7 @@
   # TODO: maybe move this to the user home-manager
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "latin,us";
+    layout = "latam,us";
     variant = "";
   };
 

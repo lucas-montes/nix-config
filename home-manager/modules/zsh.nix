@@ -15,8 +15,6 @@
       v = "nvim";
       se = "sudoedit";
       docclean = "docker system prune -a --volumes --force";
-      sukb = "setxkbmap us";
-      slkb = "setxkbmap latam";
       cprsync = "rsync -chavzP --stats --progress";
       con-ap = "bluetoothctl connect F8:4D:89:37:41:A0";
       ro = "sudo nixos-rebuild switch --flake";
