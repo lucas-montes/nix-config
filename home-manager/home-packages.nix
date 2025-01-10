@@ -6,14 +6,16 @@
     ripgrep
     unzip
     zip
-    kitty
     vscode
     brave
     dolphin
+    btop
+    wl-clipboard
 
     # WM stuff
     playerctl
     libnotify
     pavucontrol
+    pulseaudio
   ];
 }

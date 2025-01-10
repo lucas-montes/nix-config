@@ -6,15 +6,20 @@
     syntaxHighlighting.enable = true;
 
     oh-my-zsh = {
-    enable = true;
-    plugins = [ "git" "virtualenv" "direnv" ];
-    theme = "agnoster";
-  };
+      enable = true;
+      plugins = ["git" "virtualenv" "direnv"];
+      theme = "agnoster";
+    };
 
     shellAliases = {
-        v = "nvim";
-        se = "sudoedit";
-      };
+      v = "nvim";
+      se = "sudoedit";
+      docclean = "docker system prune -a --volumes --force";
+      sukb = "setxkbmap us";
+      slkb = "setxkbmap latam";
+      cprsync = "rsync -chavzP --stats --progress";
+      con-ap = "bluetoothctl connect F8:4D:89:37:41:A0";
+    };
 
     history.size = 10000;
     history.path = "$HOME/dump/zsh/history";

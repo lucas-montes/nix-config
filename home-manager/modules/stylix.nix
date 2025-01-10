@@ -18,8 +18,9 @@
 
   stylix = {
     enable = true;
+    autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/darcula.yaml";
 
     targets = {
       neovim.enable = false;
@@ -27,12 +28,6 @@
       wofi.enable = false;
       hyprland.enable = false;
       hyprlock.enable = false;
-    };
-
-    cursor = {
-      name = "DMZ-Black";
-      size = 24;
-      package = pkgs.vanilla-dmz;
     };
 
     fonts = {
@@ -66,9 +61,5 @@
       light = "Papirus-Light";
     };
 
-    image = pkgs.fetchurl {
-      url = "https://codeberg.org/lunik1/nixos-logo-gruvbox-wallpaper/raw/branch/master/png/gruvbox-dark-rainbow.png";
-      sha256 = "036gqhbf6s5ddgvfbgn6iqbzgizssyf7820m5815b2gd748jw8zc";
-    };
   };
 }
