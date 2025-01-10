@@ -20,11 +20,13 @@
     enable = true;
     autoEnable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/darcula.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
 
     targets = {
-      neovim.enable = false;
+      kitty.enable = true;
+      neovim.enable = true;
       waybar.enable = false;
+      btop.enable = true;
       wofi.enable = false;
       hyprland.enable = false;
       hyprlock.enable = false;
@@ -48,10 +50,6 @@
         package = pkgs.noto-fonts;
       };
 
-      sizes = {
-        terminal = 13;
-        applications = 11;
-      };
     };
 
     iconTheme = {
@@ -61,5 +59,9 @@
       light = "Papirus-Light";
     };
 
+    image = pkgs.fetchurl {
+      url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
+      sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
+    };
   };
 }
