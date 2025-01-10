@@ -27,10 +27,8 @@
 
       general = {
         gaps_in = 5;
-        gaps_out = 15;
-
+        gaps_out = "10,2,2,2";
         border_size = 1;
-
         "col.active_border" = "rgb(11111B)";
         "col.inactive_border" = "rgba(595959aa)";
         layout = "dwindle";
@@ -38,8 +36,6 @@
 
       decoration = {
         rounding = 10;
-        # rounding_power = 2;
-
         active_opacity = 1.0;
         inactive_opacity = 1.0;
 
@@ -58,12 +54,11 @@
       };
 
       animations = {
-        enabled = false;
+        enabled = true;
       };
 
       input = {
         kb_layout = "us,latin";
-        # kb_options = "grp:caps_toggle";
       };
 
       gestures = {
