@@ -27,7 +27,7 @@
 
       general = {
         gaps_in = 5;
-        gaps_out = "10,2,2,2";
+        gaps_out = "2,2,2,2";
         border_size = 1;
         "col.active_border" = "rgb(11111B)";
         "col.inactive_border" = "rgba(595959aa)";
@@ -77,8 +77,8 @@
       };
 
       misc = {
-        force_default_wallpaper = -1;
-        disable_hyprland_logo = false;
+        force_default_wallpaper = 0;
+        disable_hyprland_logo = true;
       };
     };
   };

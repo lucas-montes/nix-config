@@ -6,18 +6,16 @@
       mainBar = {
         layer = "top";
         position = "top";
-  height = 14;
-  margin-top = 8;
-  margin-bottom = -10;
+        height = 14;
+        margin-top = 2;
+        margin-bottom = 0;
         modules-left = [
+        ];
 
-  ];
+        modules-center = ["hyprland/workspaces"];
+        modules-right = ["tray" "network" "pulseaudio" "clock"];
 
-  modules-center = ["hyprland/workspaces"];
-  modules-right = ["tray" "network" "pulseaudio" "clock"];
-
-
- "clock" = {
+        "clock" = {
           format = "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%H:%M}";
           format-alt = "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%A %B de %Y}";
         };
@@ -25,7 +23,7 @@
         "hyprland/workspaces" = {
           active-only = false;
           all-outputs = true;
-          disable-scroll = false;   
+          disable-scroll = false;
           format = "{icon}";
           format-icons = {
             "1" = "";
@@ -35,12 +33,11 @@
             "5" = "";
             "6" = "";
             "magic" = "";
-            "urgent"= "";
-			"active"="";
-			"default"= "";
-    sort-by-number= true;
+            "urgent" = "";
+            "active" = "";
+            "default" = "";
+            sort-by-number = true;
           };
-
         };
 
         "pulseaudio" = {
@@ -59,29 +56,28 @@
           on-click = "pavucontrol";
         };
 
-         "battery" = {
-    states = {
-      good = 95;
-      warning = 30;
-      critical = 15;
-    };
-    format = "{icon}  {capacity}%";
-    format-charging = "{capacity}% ";
-    format-plugged = "{capacity}% ";
-    format-alt = "{icon} {time}";
-    format-icons = ["" "" "" "" ""];
-  };
+        "battery" = {
+          states = {
+            good = 95;
+            warning = 30;
+            critical = 15;
+          };
+          format = "{icon}  {capacity}%";
+          format-charging = "{capacity}% ";
+          format-plugged = "{capacity}% ";
+          format-alt = "{icon} {time}";
+          format-icons = ["" "" "" "" ""];
+        };
 
-  "network" = {
-   format-ethernet = "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ipaddr}";
-    format-linked = "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ifname} (No IP)";
-  };
+        "network" = {
+          format-ethernet = "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ipaddr}";
+          format-linked = "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ifname} (No IP)";
+        };
 
-  "tray" = {
-    icon-size = 16;
-    spacing = 5;
-  };
-
+        "tray" = {
+          icon-size = 16;
+          spacing = 5;
+        };
       };
     };
   };

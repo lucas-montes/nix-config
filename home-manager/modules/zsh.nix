@@ -7,7 +7,7 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "virtualenv" "direnv"];
+      plugins = ["git" "direnv"];
       theme = "agnoster";
     };
 
@@ -19,6 +19,8 @@
       slkb = "setxkbmap latam";
       cprsync = "rsync -chavzP --stats --progress";
       con-ap = "bluetoothctl connect F8:4D:89:37:41:A0";
+      ro = "sudo nixos-rebuild switch --flake";
+      ru = "home-manager switch --flake";
     };
 
     history.size = 10000;

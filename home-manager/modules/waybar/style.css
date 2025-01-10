@@ -100,6 +100,14 @@ padding: 5px 10px;
   margin-right: 10px;
 }
 
+#bluetooth {
+  background: #11111D; /* rgba(26,26,26,.9); */
+  padding: 0 1rem;
+  border-radius: 0.75rem;;
+  color: #fff;
+  margin-right: 10px;
+}
+
 #pulseaudio {
   background: #11111D; /* rgba(26,26,26,.9); */
   padding: 0 1rem;

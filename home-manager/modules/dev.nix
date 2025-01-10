@@ -7,64 +7,40 @@
     };
     starship = {
       enable = true;
+      enableZshIntegration = true;
       settings = {
         add_newline = false;
-        format = "$shlvl$shell$username$hostname$nix_shell$git_branch$git_commit$git_state$git_status$directory$jobs$cmd_duration$character";
-        shlvl = {
-          disabled = false;
-          symbol = "ﰬ";
-          style = "bright-red bold";
-        };
+        format = "$python$directory$character";
+        right_format = "$status$git_branch$git_status";
         shell = {
           disabled = false;
           format = "$indicator";
           bash_indicator = "[BASH](bright-white) ";
           zsh_indicator = "[ZSH](bright-white) ";
         };
-        username = {
-          style_user = "bright-white bold";
-          style_root = "bright-red bold";
-        };
-        hostname = {
-          style = "bright-green bold";
-          ssh_only = true;
+        status = {
+          disabled = false;
+          symbol = "✘ ";
         };
         nix_shell = {
           symbol = "";
           format = "[$symbol$name]($style) ";
-          style = "bright-purple bold";
         };
         git_branch = {
-          only_attached = true;
-          format = "[$symbol$branch]($style) ";
-          symbol = "שׂ";
-          style = "bright-yellow bold";
+          format = "[$branch]($style) ";
         };
-        git_commit = {
-          only_detached = true;
-          format = "[ﰖ$hash]($style) ";
-          style = "bright-yellow bold";
-        };
-        git_state = {
-          style = "bright-purple bold";
-        };
-        git_status = {
-          style = "bright-green bold";
-        };
+
         directory = {
           read_only = " ";
           truncation_length = 0;
         };
         cmd_duration = {
           format = "[$duration]($style) ";
-          style = "bright-blue";
-        };
-        jobs = {
-          style = "bright-green bold";
         };
         character = {
-          success_symbol = "[\\$](bright-green bold)";
-          error_symbol = "[\\$](bright-red bold)";
+          success_symbol = "[❯](red)[❯](yellow)[❯](green)";
+          error_symbol = "[❯](red)[❯](yellow)[❯](green)";
+          vicmd_symbol = "[❮](green)[❮](yellow)[❮](red)";
         };
       };
     };
