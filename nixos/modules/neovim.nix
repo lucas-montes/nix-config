@@ -1,10 +1,27 @@
 {
   programs.nvf = {
     enable = true;
-    # your settings need to go into the settings attribute set
-    # most settings are documented in the appendix
     settings = {
       vim = {
+        undoFile.enable = true;
+        binds = {
+          whichKey.enable = true;
+        };
+        statusline.lualine.enable = true;
+        keymaps = [
+          {
+            key = "<leader>y";
+            mode = ["n" "v"];
+            silent = true;
+            action = "[[+y]]";
+          }
+          {
+            key = "<leader>pv";
+            mode = "n";
+            silent = true;
+            action = ":Ex<CR>";
+          }
+        ];
         lsp = {
           enable = true;
         };
@@ -14,7 +31,6 @@
           enable = true;
           name = "dracula";
         };
-        # stautsline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;
 
