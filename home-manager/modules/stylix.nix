@@ -12,10 +12,9 @@
 
   stylix = {
     enable = true;
-    autoEnable = true;
     polarity = "dark";
     base16Scheme = {
-    base00 = "282936"; #background
+    base00 = "000000"; #background default: 282936
     base01 = "333547";
     base02 = "4d4f68";
     base03 = "626483";
@@ -37,14 +36,19 @@
       kitty.enable = true;
       neovim.enable = true;
       vscode.enable = true;
-      waybar.enable = false;
+      lazygit.enable = true;
+      hyprlock.enable = true;
+      swaync.enable = true;
+      tmux.enable = true;
+      fzf.enable = true;
       btop.enable = true;
       rofi.enable = true;
+      gtk.enable = true;
       hyprland.enable = false;
-      hyprlock.enable = true;
+      waybar.enable = false;
     };
 
 
-    image = ../../themes/wallpaper.jpg;
+    image = ../../wallpaper.jpg;
   };
 }

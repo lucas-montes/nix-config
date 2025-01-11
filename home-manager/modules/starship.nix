@@ -1,12 +1,13 @@
-{lib, ...}:
-let 
-createComponent = color: value: "[─](fg:current_line)[](fg:${color})[$symbol ](fg:primary bg:${color})[](fg:${color} bg:box)[ ${value}](fg:foreground bg:box)[](fg:box)";
-in{
+{lib, ...}: let
+  createAllComponent = color: symbol: value: "[─](fg:current_line)[](fg:${color})[${symbol} ](fg:primary bg:${color})[](fg:${color} bg:box)[ ${value}](fg:foreground bg:box)[](fg:box)";
+  createComponent = color: value: createAllComponent color "$symbol" value;
+in {
   programs = {
     starship = {
       enable = true;
       enableZshIntegration = true;
       settings = {
+        #TODO: reuse from stylix
         palette = "dracula";
         palettes.dracula = {
           foreground = "#F8F8F2";
@@ -41,43 +42,39 @@ in{
           "$character"
         ];
 
+        fill = {
+          symbol = "─";
+          style = "fg:current_line";
+        };
+
         username = {
-          symbol = "";
           show_always = true;
           disabled = false;
-format =  (createComponent "green" "$user");        };
+          format = createAllComponent "purple" "" "$user";
+        };
 
         directory = {
-          symbol = "󰷏";
-          format =  (createComponent "pink" "$read_only$truncation_symbol$path");
-          home_symbol = " ~/";
-          truncation_symbol = " ";
-          truncation_length = 2;
-          read_only = "󱧵 ";
-          read_only_style = "";
-          #           substitutions = {
-          #             Documents = "󰈙";
-          # Downloads = "";
-          # Music = "󰝚";
-          # Pictures = "";
-          # Repos = "󰲋";
-          #           };
+          disabled = false;
+          format = createAllComponent "pink" "" "$path";
+          home_symbol = "~";
+          truncate_to_repo = false;
+          truncation_length = 0;
         };
 
         git_branch = {
-          format =  (createComponent "purple" "$branch");
-          symbol = "";
+          format = createComponent "red" "$branch";
+          symbol = "";
         };
 
         nix_shell = {
           symbol = "";
-          format =  (createComponent "cyan" "$version");
+          format = createComponent "cyan" "$state( ($name))";
         };
 
         rust = {
-          format =  (createComponent "pink" "$version");
+          format = createComponent "orange" "$version";
           version_format = "v$raw";
-          symbol = "🦀 ";
+          symbol = "🦀";
           style = "bold red bg:0x86BBD8";
           disabled = false;
           detect_extensions = ["rs"];
@@ -85,7 +82,7 @@ format =  (createComponent "green" "$user");        };
           detect_folders = [];
         };
         python = {
-          format =  (createComponent "blue" "$pyenv_prefix($version )(($virtualenv) )");
+          format = createComponent "blue" "$pyenv_prefix($version )(($virtualenv) )";
           python_binary = [
             "python"
             "python3"
@@ -110,19 +107,17 @@ format =  (createComponent "green" "$user");        };
         };
 
         package = {
-          format =  (createComponent "red" "$version");
+          format = createComponent "green" "$version";
           symbol = "📦";
           display_private = false;
           disabled = false;
           version_format = "v$raw";
         };
 
-
         cmd_duration = {
-          symbol = "";
           min_time = 500;
           show_milliseconds = true;
-          format =  (createComponent "orange" "$duration");
+          format = createAllComponent "yellow" "" "$duration";
         };
 
         character = {

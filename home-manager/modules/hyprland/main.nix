@@ -1,18 +1,12 @@
 {
+  home.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
   wayland.windowManager.hyprland = {
+    
     enable = true;
     systemd.enable = true;
     settings = {
-      env = [
-        # Hint Electron apps to use Wayland
-        "NIXOS_OZONE_WL,1"
-        # "XDG_CURRENT_DESKTOP,Hyprland"
-        # "XDG_SESSION_TYPE,wayland"
-        # "XDG_SESSION_DESKTOP,Hyprland"
-        # "QT_QPA_PLATFORM,wayland"
-        "XDG_SCREENSHOTS_DIR,$HOME/screens"
-      ];
-
       monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
@@ -28,10 +22,10 @@
 
       general = {
         gaps_in = 5;
-        gaps_out = "2,2,2,2";
-        border_size = 1;
+        gaps_out = "5,5,5,5";
+        border_size = 2;
         "col.active_border" = "rgb(CBA6F7) rgb(D2F7A6) 45deg";
-        "col.inactive_border" = "rgb(133e7c) rgb(091833) 45deg";
+        "col.inactive_border" = "rgb(5cf9eb) rgb(5ecae9) 45deg";
         layout = "dwindle";
       };
 

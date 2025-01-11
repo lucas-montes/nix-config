@@ -1,0 +1,8 @@
+{
+  programs.fzf = {
+    enable = true;
+    changeDirWidgetCommand = "fd --type d";
+    fuzzyCompletion = true;
+    tmux.enableShellIntegration = true;
+  };
+}

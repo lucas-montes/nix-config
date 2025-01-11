@@ -1,1 +1,2 @@
-change custom theme [here](https://github.com/librephoenix/nixos-config/blob/main/themes/dracula/dracula.yaml)
+# TODO: 
+Declare colors in a var an pass them around 

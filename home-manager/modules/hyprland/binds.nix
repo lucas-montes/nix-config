@@ -8,7 +8,7 @@
       "$mainMod SHIFT, Q, exit,"
       "$mainMod,       E, exec, $fileManager"
       "$mainMod,       F, togglefloating,"
-      "$mainMod,       A, exec, $menu --show drun"
+      "$mainMod,       A, exec, $menu -show drun"
       "$mainMod,       P, pseudo,"
       "$mainMod,       S, togglesplit,"
       # "$mainMod,       N, exec, pkill -SIGUSR2 waybar"

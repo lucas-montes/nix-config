@@ -67,9 +67,7 @@
       extraSpecialArgs = {
         inherit inputs homeStateVersion user;
       };
-
       modules = [
-      
         ./home-manager/home.nix
       ];
     };
