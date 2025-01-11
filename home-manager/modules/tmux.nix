@@ -8,6 +8,11 @@
     escapeTime = 0;
     keyMode = "vi";
     terminal = "screen-256color";
+    extraConfig = ''
+    bind-key g run "tmux save-buffer - | xclip -i -sel clipboard"
+    set -g set-clipboard on
+    set-option -g status-position top
+    '';
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.catppuccin;
