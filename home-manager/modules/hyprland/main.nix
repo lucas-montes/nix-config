@@ -6,10 +6,10 @@
       env = [
         # Hint Electron apps to use Wayland
         "NIXOS_OZONE_WL,1"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_QPA_PLATFORM,wayland"
+        # "XDG_CURRENT_DESKTOP,Hyprland"
+        # "XDG_SESSION_TYPE,wayland"
+        # "XDG_SESSION_DESKTOP,Hyprland"
+        # "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
       ];
 
@@ -17,7 +17,8 @@
       "$mainMod" = "SUPER";
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
-      "$menu" = "wofi";
+      "$menu" = "rofi";
+      "$browser" = "brave";
 
       exec-once = [
         "waybar"
@@ -29,8 +30,8 @@
         gaps_in = 5;
         gaps_out = "2,2,2,2";
         border_size = 1;
-        "col.active_border" = "rgb(11111B)";
-        "col.inactive_border" = "rgba(595959aa)";
+        "col.active_border" = "rgb(CBA6F7) rgb(D2F7A6) 45deg";
+        "col.inactive_border" = "rgb(133e7c) rgb(091833) 45deg";
         layout = "dwindle";
       };
 
@@ -40,16 +41,19 @@
         inactive_opacity = 1.0;
 
         shadow = {
-          enabled = false;
-          range = 15;
-          render_power = 2;
-          color = "0x66000000";
+          enabled = true;
+          range = 4;
+          render_power = 3;
+          # color = "0x66000000";
         };
 
         blur = {
           enabled = false;
-          size = 4;
-          passes = 2;
+          size = 12;
+          passes = 3;
+          new_optimizations = true;
+          noise = 0.05;
+          ignore_opacity = true;
         };
       };
 

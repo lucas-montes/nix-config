@@ -9,38 +9,38 @@
         height = 14;
         margin-top = 2;
         margin-bottom = 0;
-        modules-left = [
-        ];
+modules-left = ["hyprland/workspaces"];
+        modules-center = ["clock"];
+        modules-right = ["tray" "hyprland/language" "pulseaudio" "network"];
 
-        modules-center = ["hyprland/workspaces"];
-        modules-right = ["tray" "network" "pulseaudio" "clock"];
+
+    "hyprland/language" = {
+        format= "  {1}";
+        tooltip= false;
+    };
 
         "clock" = {
-          format = "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%H:%M}";
-          format-alt = "<span foreground='#6D8895' font='14.5' rise='-1000'> </span>{:%A %B de %Y}";
+          format = "  {:%A - %B %d, %Y - %R}";
+          tooltip = false;
         };
 
         "hyprland/workspaces" = {
-          active-only = false;
-          all-outputs = true;
-          disable-scroll = false;
+          tooltip = false;
           format = "{icon}";
           format-icons = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" = "";
-            "6" = "";
-            "magic" = "";
+            "1" = "";
+            "2" = "";
+            "3" = "";
+            "4" = "";
+            "5" = "";
             "urgent" = "";
-            "active" = "";
+            "active" = "";
             "default" = "";
-            sort-by-number = true;
           };
         };
 
         "pulseaudio" = {
+          tooltip = false;
           format = "{icon} {volume}%";
           format-bluetooth = "{icon} {volume}% ";
           format-muted = "";
@@ -54,24 +54,6 @@
             "default" = ["" ""];
           };
           on-click = "pavucontrol";
-        };
-
-        "battery" = {
-          states = {
-            good = 95;
-            warning = 30;
-            critical = 15;
-          };
-          format = "{icon}  {capacity}%";
-          format-charging = "{capacity}% ";
-          format-plugged = "{capacity}% ";
-          format-alt = "{icon} {time}";
-          format-icons = ["" "" "" "" ""];
-        };
-
-        "network" = {
-          format-ethernet = "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ipaddr}";
-          format-linked = "<span foreground='#7aa2f7' font='14.5' rise='-1000'> </span>{ifname} (No IP)";
         };
 
         "tray" = {

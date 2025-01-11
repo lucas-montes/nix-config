@@ -1,0 +1,1 @@
+change custom theme [here](https://github.com/librephoenix/nixos-config/blob/main/themes/dracula/dracula.yaml)

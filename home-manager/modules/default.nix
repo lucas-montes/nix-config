@@ -11,7 +11,7 @@
     ./swaync
     ./tmux.nix
     ./waybar
-    ./wofi
+    ./rofi
     ./zsh.nix
   ];
 }
