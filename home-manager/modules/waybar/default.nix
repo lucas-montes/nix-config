@@ -18,6 +18,16 @@
           tooltip = false;
         };
 
+#         "sway/language": {
+#     "format": "{}",
+#     "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+# },https://github.com/Alexays/Waybar/wiki/Module:-Language
+
+# "sway/language": {
+#     "format": "{short} {variant}",
+# }
+
+
 
         "clock" = {
           format = "  {:%A - %B %d, %Y - %R}";
