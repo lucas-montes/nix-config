@@ -1,6 +1,7 @@
-{config, ...}: let
+{config, pkgs, inputs, ...}: let
   inherit (config.lib.stylix) colors;
 in {
+  imports = [inputs.nvf.homeManagerModules.default];
   programs.nvf = {
     enable = true;
     settings = {
@@ -48,7 +49,13 @@ in {
           enableTreesitter = true;
           nix.enable = true;
           rust.enable = true;
-          python.enable = true;
+  markdown = {
+            enable = true;
+            # format.extraFiletypes = ["quarto" "rmarkdown"];
+          };
+          html.enable = true;
+          css.enable = true; 
+	  python.enable = true;
         };
       };
     };

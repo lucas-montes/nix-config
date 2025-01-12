@@ -5,6 +5,7 @@
     ./hyprland
     ./fzf.nix
     ./lazygit.nix
+    ./neovim.nix
     ./starship.nix
     ./stylix.nix
     ./swaync

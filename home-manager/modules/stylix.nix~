@@ -34,7 +34,7 @@
 
     targets = {
       ghostty.enable = true;
-      nvf.enable = true;
+      neovim.enable = true;
       vscode.enable = true;
       lazygit.enable = true;
       hyprlock.enable = true;
