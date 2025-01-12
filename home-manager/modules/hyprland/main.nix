@@ -1,22 +1,15 @@
 {
-  home.sessionVariables = {
-    NIXOS_OZONE_WL = "1";
-  };
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
-      "$fileManager" = "dolphin";
+      "$fileManager" = "files";
       "$menu" = "rofi";
       "$browser" = "brave";
 
-      exec-once = [
-        "waybar"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
-      ];
+      exec-once = [ "waybar" "$browser" "$termianl"];
 
       general = {
         gaps_in = 5;
@@ -36,7 +29,6 @@
           enabled = true;
           range = 4;
           render_power = 3;
-          # color = "0x66000000";
         };
 
         blur = {
@@ -73,8 +65,10 @@
         new_status = "master";
       };
 
+      cursor = {enable_hyprcursor = true; no_hardware_cursors = false;};
+
       misc = {
-        force_default_wallpaper = 0;
+        force_default_wallpaper = 2;
         disable_hyprland_logo = true;
       };
     };

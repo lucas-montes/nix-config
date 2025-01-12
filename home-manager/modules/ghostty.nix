@@ -5,6 +5,7 @@
     enableZshIntegration = true;
     enableBashIntegration = true;
     settings = {
+      gtk-tabs-location = "hidden";
       gtk-single-instance = true;
       window-decoration = false;
       auto-update = "off";

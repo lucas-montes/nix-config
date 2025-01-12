@@ -5,6 +5,7 @@
     autosuggestion.enable = true;
     autocd = true;
     syntaxHighlighting.enable = true;
+    enableVteIntegration = true;
 
     oh-my-zsh = {
       enable = true;
@@ -12,7 +13,7 @@
       theme = "agnoster";
     };
 
-    shellAliases = {
+    shellAliases =let hey = "hey"; in {
       v = "nvim";
       se = "sudoedit";
       docclean = "docker system prune -a --volumes --force";
@@ -20,6 +21,10 @@
       con-ap = "bluetoothctl connect F8:4D:89:37:41:A0";
       ro = "sudo nixos-rebuild switch --flake";
       ru = "home-manager switch --flake";
+      ea = "v $HOME/.dotfiles/";
+      rs = "ru $HOME/.dotfiles/flake.nix";
+      eeee="hello from $HOME, ${hey}";
+      notes = "cd $HOME/Notes/ && v .";
     };
 
     plugins = [
@@ -31,14 +36,9 @@
       ];
 
     history.size = 10000;
-    history.path = "$HOME/dump/zsh/history";
 
     initExtra = ''
-          # 96eb8f124fd851174b28edf645fb4b83f4b32e59 check to find the if condition to launch tmux
-      # if [ -n "$DISPLAY" ]; then
-      #   neofetch
-      # fi
-
+      # 96eb8f124fd851174b28edf645fb4b83f4b32e59 check to find the if condition to launch tmux
 
       # Start UWSM
       if uwsm check may-start > /dev/null && uwsm select; then

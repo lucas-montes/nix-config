@@ -3,10 +3,10 @@
   home.packages = with pkgs; [
     ripgrep
     unzip
+    nautilus
     zip
     vscode
     brave
-    dolphin
     btop
     wl-clipboard
     neofetch

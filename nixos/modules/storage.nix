@@ -1,4 +1,5 @@
 {
+  services.gvfs.enable = true; # For nautilus to use trash
   services.udisks2.enable = true;
   fileSystems."/data" = {
     device = "/dev/disk/by-label/SSD-1TB";

@@ -59,6 +59,6 @@
       };
     };
 
-    image = ../../wallpaper.jpg;
+    image = ../../wallpaper.png;
   };
 }
