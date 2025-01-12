@@ -6,12 +6,12 @@
     ./fzf.nix
     ./lazygit.nix
     ./neovim.nix
+    ./rofi.nix
     ./starship.nix
     ./stylix.nix
-    ./swaync
+    ./swaync.nix
     ./ghostty.nix
     ./waybar
-    ./rofi
     ./zsh.nix
   ];
 }

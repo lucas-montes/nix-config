@@ -17,8 +17,6 @@
         position = "0, 600";
         halign = "center";
         walign = "center";
-
-        shadow_passes = 1;
       };
 
     };
