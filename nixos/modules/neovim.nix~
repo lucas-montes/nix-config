@@ -1,6 +1,4 @@
-{config, ...}: let
-  inherit (config.lib.stylix) colors;
-in {
+{
   programs.nvf = {
     enable = true;
     settings = {
@@ -9,6 +7,7 @@ in {
         binds = {
           whichKey.enable = true;
         };
+        statusline.lualine.enable = true;
         keymaps = [
           {
             key = "<leader>y";
@@ -28,15 +27,9 @@ in {
         };
         viAlias = true;
         vimAlias = true;
-        statusline.lualine = {
-          enable = true;
-          theme = "base16";
-        };
         theme = {
-          name = "base16";
-          style = "dark";
-          base16-colors = colors;
           enable = true;
+          name = "dracula";
         };
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;

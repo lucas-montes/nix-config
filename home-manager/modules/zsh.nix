@@ -35,9 +35,9 @@
 
     initExtra = ''
           # 96eb8f124fd851174b28edf645fb4b83f4b32e59 check to find the if condition to launch tmux
-      if [ -n "$DISPLAY" ]; then
-        neofetch
-      fi
+      # if [ -n "$DISPLAY" ]; then
+      #   neofetch
+      # fi
 
 
       # Start UWSM

@@ -9,7 +9,7 @@
     settings = {
       monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
-      "$terminal" = "kitty";
+      "$terminal" = "ghostty";
       "$fileManager" = "dolphin";
       "$menu" = "rofi";
       "$browser" = "brave";

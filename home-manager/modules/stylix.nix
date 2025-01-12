@@ -33,7 +33,7 @@
   };
 
     targets = {
-      kitty.enable = true;
+      ghostty.enable = true;
       neovim.enable = true;
       vscode.enable = true;
       lazygit.enable = true;
@@ -48,6 +48,16 @@
       waybar.enable = false;
     };
 
+    fonts = {
+      emoji = {
+        name = "Noto Color Emoji";
+        package = pkgs.font-awesome;
+      };
+      monospace = {
+        name = "JetBrains Mono";
+        package = pkgs.jetbrains-mono;
+      };
+    };
 
     image = ../../wallpaper.jpg;
   };
