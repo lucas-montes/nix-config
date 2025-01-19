@@ -7,7 +7,6 @@
     ./home-manager.nix
     ./hyprland.nix
     ./locale.nix
-    ./mime.nix
     ./net.nix
     ./nix.nix
     ./nvidia.nix

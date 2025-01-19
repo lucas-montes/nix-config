@@ -9,7 +9,7 @@
       "$mainMod,       E, exec, $fileManager"
       "$mainMod,       F, togglefloating,"
       "$mainMod,       A, exec, $menu -show drun"
-      "$mainMod,       P, pseudo,"
+      "$mainMod,       P, pin,"
       "$mainMod,       D, togglesplit,"
       "$mainMod,       N, exec, swaync-client -t"
       ", Print, exec, grimblast --notify --freeze copysave area"

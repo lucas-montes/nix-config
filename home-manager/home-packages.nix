@@ -5,14 +5,14 @@
     unzip
     nautilus
     zip
-    vscode
-    brave
     btop
+    code-cursor
     wl-clipboard
     neofetch
     playerctl
     libnotify
     pavucontrol
+    brightnessctl
     pulseaudio
     networkmanagerapplet
   ];

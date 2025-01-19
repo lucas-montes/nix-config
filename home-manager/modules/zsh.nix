@@ -14,17 +14,17 @@
     };
 
     shellAliases =let hey = "hey"; in {
-      v = "nvim";
       se = "sudoedit";
       docclean = "docker system prune -a --volumes --force";
       cprsync = "rsync -chavzP --stats --progress";
       con-ap = "bluetoothctl connect F8:4D:89:37:41:A0";
       ro = "sudo nixos-rebuild switch --flake";
       ru = "home-manager switch --flake";
-      ea = "v $HOME/.dotfiles/";
-      rs = "ru $HOME/.dotfiles/flake.nix";
-      eeee="hello from $HOME, ${hey}";
-      notes = "cd $HOME/Notes/ && v .";
+      es = "vim $HOME/.dotfiles/";
+      rs = "ru $HOME/.dotfiles";
+      notes = "cd $HOME/Notes/ && vim .";
+      spj = "$(cp -R ~/.dotfile/templates/rust $1 && cd $1)";
+      venv = "nix-shell --command zsh";
     };
 
     plugins = [

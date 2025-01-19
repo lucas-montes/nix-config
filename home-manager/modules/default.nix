@@ -1,16 +1,19 @@
 {
   imports = [
+    ./browser.nix
     ./dev.nix
     ./git.nix
     ./hyprland
     ./fzf.nix
     ./lazygit.nix
+    ./mime.nix
     ./neovim.nix
     ./rofi.nix
     ./starship.nix
     ./stylix.nix
     ./swaync.nix
     ./ghostty.nix
+    ./vscode.nix
     ./waybar
     ./zsh.nix
   ];

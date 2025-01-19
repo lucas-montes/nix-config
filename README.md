@@ -30,3 +30,10 @@ export NIX_CONF_DIR="${XDG_CONFIG_HOME}/nix"
 export NIX_CONF_DIR="${XDG_CONFIG_DIRS}/nix"
 export NIX_CONF_DIR="${XDG_CONFIG_DIR}/nix"
 export NIX_PROFILES="/nix/var/nix/profiles"
+
+
+# Notes
+Use smartset key + hotkey 3 to mount keyboadr options
+https://kinesis-ergo.com/wp-content/uploads/Advantage360-SmartSet-KB360-Users-Manual-v10-12-22.pdf
+https://kinesis-ergo.com/wp-content/uploads/Adv360-SmartSet-Direct-Programming-Guide-v12-2-22.pdf
+

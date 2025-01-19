@@ -18,17 +18,6 @@
           tooltip = false;
         };
 
-#         "sway/language": {
-#     "format": "{}",
-#     "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
-# },https://github.com/Alexays/Waybar/wiki/Module:-Language
-
-# "sway/language": {
-#     "format": "{short} {variant}",
-# }
-
-
-
         "clock" = {
           format = "  {:%A - %B %d, %Y - %R}";
           tooltip = true;
@@ -90,6 +79,7 @@
           tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
           tooltip = true;
           format = " {status}";
+          on-click = "blueman-manager";
         };
       };
     };

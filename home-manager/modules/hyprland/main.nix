@@ -5,11 +5,13 @@
       monitor = ",preferred,auto,auto";
       "$mainMod" = "SUPER";
       "$terminal" = "ghostty";
-      "$fileManager" = "files";
+      "$fileManager" = "nautilus";
       "$menu" = "rofi";
       "$browser" = "brave";
 
-      exec-once = [ "waybar" "$browser" "$termianl"];
+      "windowrulev2" = [ "float, title:^(Picture in picture)$" "pin, title:^(Picture in picture)$" ];
+
+      exec-once = [ "waybar" "[workspace 1] $browser" "[workspace 2] $terminal"];
 
       general = {
         gaps_in = 5;
@@ -65,6 +67,7 @@
         new_status = "master";
       };
 
+      # TODO: this does nothing
       cursor = {enable_hyprcursor = true; no_hardware_cursors = false;};
 
       misc = {

@@ -1,4 +1,8 @@
-{ homeStateVersion, user, ... }: {
+{
+  homeStateVersion,
+  user,
+  ...
+}: {
   imports = [
     ./modules
     ./home-packages.nix
@@ -11,7 +15,7 @@
   };
 
   home.sessionVariables = {
-NIXOS_OZONE_WL = "1";
-  XDG_SESSION_TYPE = "wayland";
-};
+    NIXOS_OZONE_WL = "1";
+    XDG_SESSION_TYPE = "wayland";
+  };
 }
