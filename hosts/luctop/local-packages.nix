@@ -3,5 +3,6 @@
     curl
     wget
     git
+    cudatoolkit
   ];
 }

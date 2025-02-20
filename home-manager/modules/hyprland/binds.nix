@@ -14,6 +14,10 @@
       "$mainMod,       N, exec, swaync-client -t"
       ", Print, exec, grimblast --notify --freeze copysave area"
 
+      ", monitoradded, exec, hyprctl keyword monitor 'HDMI-A-1,preferred,auto,1'"
+", monitorremoved, exec, hyprctl keyword monitor 'eDP-1,preferred,auto,1'"
+
+
       # Moving focus
       "$mainMod, h, movefocus, l"
       "$mainMod, l, movefocus, r"

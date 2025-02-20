@@ -1,13 +1,17 @@
 {pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
+    openssl
     ripgrep
+    xournalpp
+    stripe-cli
     unzip
     nautilus
     zip
-    btop
-    code-cursor
+    rpi-imager
+    sqlitestudio
     wl-clipboard
+    grimblast
     neofetch
     playerctl
     libnotify

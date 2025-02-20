@@ -1,6 +1,7 @@
 {
   imports = [
     ./browser.nix
+    ./btop.nix
     ./dev.nix
     ./git.nix
     ./hyprland
