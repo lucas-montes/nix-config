@@ -15,10 +15,9 @@
     };
 
     stylix = {
-      url = "github:danth/stylix";
+      url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = {
@@ -29,7 +28,7 @@
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     user = "lucas";
-      pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = nixpkgs.legacyPackages.${system};
     hosts = [
       {
         hostname = "luctop";
@@ -52,7 +51,6 @@
         ];
       };
   in {
-
     nixosConfigurations = nixpkgs.lib.foldl' (configs: host:
       configs
       // {
@@ -62,10 +60,8 @@
       }) {}
     hosts;
 
-    formatter.x86_64-linux = pkgs.alejandra;
-
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      inherit pkgs;
       extraSpecialArgs = {
         inherit inputs homeStateVersion user;
       };

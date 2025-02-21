@@ -18,7 +18,6 @@
         halign = "center";
         walign = "center";
       };
-
     };
   };
 }

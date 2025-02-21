@@ -30,13 +30,13 @@ in {
           "[╭](fg:current_line)"
           "$username"
           "$directory"
-          "$cmd_duration"
 
           "$git_branch"
           "$nix_shell"
           "$rust"
           "$python"
           "$package"
+          "$cmd_duration"
 
           "$line_break"
           "$character"

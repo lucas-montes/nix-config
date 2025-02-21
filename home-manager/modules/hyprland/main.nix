@@ -9,9 +9,9 @@
       "$menu" = "rofi";
       "$browser" = "brave";
 
-      "windowrulev2" = [ "float, title:^(Picture in picture)$" "pin, title:^(Picture in picture)$" ];
+      "windowrulev2" = ["float, title:^(Picture in picture)$" "pin, title:^(Picture in picture)$"];
 
-      exec-once = [ "waybar" "[workspace 1] $browser" "[workspace 2] $terminal"];
+      exec-once = ["waybar" "[workspace 1] $browser" "[workspace 2] $terminal"];
 
       general = {
         gaps_in = 5;
@@ -66,9 +66,6 @@
       master = {
         new_status = "master";
       };
-
-      # TODO: this does nothing
-      cursor = {enable_hyprcursor = true; no_hardware_cursors = false;};
 
       misc = {
         force_default_wallpaper = 2;

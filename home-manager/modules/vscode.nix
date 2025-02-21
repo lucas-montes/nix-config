@@ -6,6 +6,7 @@
     userSettings = {
       "editor.minimap.enabled" = false;
       "editor.stickyScroll.enabled" = false;
+      "git.confirmSync" = false;
     };
   };
 }

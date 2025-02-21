@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{pkgs, ...}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -13,7 +13,9 @@
       theme = "agnoster";
     };
 
-    shellAliases =let hey = "hey"; in {
+    shellAliases = let
+      hey = "hey";
+    in {
       se = "sudoedit";
       docclean = "docker system prune -a --volumes --force";
       cprsync = "rsync -chavzP --stats --progress";
@@ -28,12 +30,12 @@
     };
 
     plugins = [
-        {
-          name = "you-should-use";
-          src = pkgs.zsh-you-should-use;
-          file = "share/zsh/plugins/you-should-use/you-should-use.plugin.zsh";
-        }
-      ];
+      {
+        name = "you-should-use";
+        src = pkgs.zsh-you-should-use;
+        file = "share/zsh/plugins/you-should-use/you-should-use.plugin.zsh";
+      }
+    ];
 
     history.size = 10000;
 
