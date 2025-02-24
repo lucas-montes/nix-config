@@ -5,7 +5,6 @@
     openssl
     ripgrep
     xournalpp
-    stripe-cli
     unzip
     nautilus
     zip
