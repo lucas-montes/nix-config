@@ -2,7 +2,7 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestion.enable = true;
+    autosuggestion.enable = false;
     autocd = true;
     syntaxHighlighting.enable = true;
     enableVteIntegration = true;

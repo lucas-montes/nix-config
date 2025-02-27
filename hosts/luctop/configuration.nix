@@ -20,14 +20,16 @@
     layout = "latam,us";
     variant = "";
   };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
+  programs = {
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+    };
+    nix-ld.enable = true;
+    seahorse.enable = true;
   };
-  programs.seahorse.enable = true;
   services.gnome.gnome-keyring = {enable = true;};
   virtualisation.docker.enable = true;
   # Files, browser, screen sharing stuff

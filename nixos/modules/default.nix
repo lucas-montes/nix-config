@@ -5,7 +5,6 @@
     ./boot.nix
     ./env.nix
     ./home-manager.nix
-    ./hyprland.nix
     ./locale.nix
     ./net.nix
     ./nix.nix
