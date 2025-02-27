@@ -1,10 +1,11 @@
 {
   wayland.windowManager.hyprland = {
-    enable = true;xwayland.enable = true;
-        systemd = {
-          enable = true;
-          variables = ["--all"];
-        };
+    enable = true;
+    xwayland.enable = true;
+    systemd = {
+      enable = true;
+      variables = ["--all"];
+    };
     settings = {
       monitor = ",preferred,auto,1";
       "$mainMod" = "SUPER";

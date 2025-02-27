@@ -6,6 +6,7 @@
     ./env.nix
     ./fonts.nix
     ./home-manager.nix
+    ./hyprland.nix
     ./locale.nix
     ./net.nix
     ./nix.nix

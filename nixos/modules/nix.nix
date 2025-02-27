@@ -24,7 +24,6 @@ nix = {
         "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
       ];
       experimental-features = ["nix-command" "flakes"];
-      use-xdg-base-directories = false;
       warn-dirty = false;
       keep-outputs = true;
       keep-derivations = true;
