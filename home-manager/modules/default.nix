@@ -16,7 +16,6 @@
     ./tmux.nix
     ./ghostty.nix
     ./vscode.nix
-    ./waybar
     ./zsh.nix
   ];
 }
