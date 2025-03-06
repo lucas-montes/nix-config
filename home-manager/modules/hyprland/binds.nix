@@ -17,6 +17,9 @@
       ", monitoradded, exec, hyprctl keyword monitor 'HDMI-A-1,preferred,auto,1'"
       ", monitorremoved, exec, hyprctl keyword monitor 'eDP-1,preferred,auto,1'"
 
+      "$mainMod SHIFT, equal,  exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+      "$mainMod SHIFT, minus,  exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+
       # Moving focus
       "$mainMod, h, movefocus, l"
       "$mainMod, l, movefocus, r"

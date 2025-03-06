@@ -39,7 +39,7 @@
       lazygit.enable = true;
       hyprlock.enable = true;
       swaync.enable = true;
-      tmux.enable = true;
+      tmux.enable = false;
       fzf.enable = true;
       btop.enable = true;
       rofi.enable = true;

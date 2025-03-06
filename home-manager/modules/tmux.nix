@@ -20,6 +20,11 @@
       set -g set-clipboard on
       set-option -g status-position top
 
+      bind-key h select-pane -L
+      bind-key j select-pane -D
+      bind-key k select-pane -U
+      bind-key l select-pane -R
+
       set -g @catppuccin_window_left_separator ""
       set -g @catppuccin_window_right_separator " "
       set -g @catppuccin_window_middle_separator " █"
@@ -34,7 +39,7 @@
       set -g @catppuccin_status_fill "icon"
       set -g @catppuccin_status_connect_separator "no"
       set -g @catppuccin_directory_text "#{pane_current_path}"
-      set -g @catppuccin_status_background "#b45bcf"
+      set -g @catppuccin_status_background "#000000"
     '';
   };
 
