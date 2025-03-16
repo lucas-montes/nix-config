@@ -17,7 +17,8 @@ in {
         };
         options = {
           wrap = false;
-
+          shiftwidth = 4;
+          tabstop = 4;
           # Disable backup, swap, and writebackup files
           backup = false;
           writebackup = false;
@@ -74,6 +75,7 @@ in {
           enableFormat = true;
           enableLSP = true;
           enableTreesitter = true;
+          bash.enable = true;
           nix.enable = true;
           rust.enable = true;
           html.enable = true;
