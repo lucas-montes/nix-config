@@ -22,12 +22,13 @@ in {
       ro = "sudo nixos-rebuild switch --flake";
       ru = "home-manager switch --flake";
       es = "vim ${dotfiles}";
-      rs = "ru ${dotfiles}";
+      rs = "ru ${dotfiles} && source $HOME/.zshrc";
       notes = "cd $HOME/Notes/ && vim .";
       venv = "nix-shell --command zsh";
       tx = "_new_named_session";
       gpj = "_fzf_tmux ~/Projects/";
-      dwm = "venv -p yt-dlp";
+      dw-venv = "venv -p yt-dlp";
+      dwm = "yt-dlp -x --audio-format mp3 -o '$HOME/Downloads/music/%(title)s.%(ext)s'";
     };
 
     plugins = [

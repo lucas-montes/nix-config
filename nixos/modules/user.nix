@@ -10,7 +10,7 @@
     users.${user} = {
       isNormalUser = true;
       description = "lucas";
-      extraGroups = ["networkmanager" "wheel" "docker" "dialout"];
+      extraGroups = ["networkmanager" "wheel" "docker" "dialout" "disk"];
     };
   };
 

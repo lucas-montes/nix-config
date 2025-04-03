@@ -4,6 +4,7 @@
     ./btop.nix
     ./dev.nix
     ./git.nix
+    ./gtk.nix
     ./hyprland
     ./fzf.nix
     ./lazygit.nix
