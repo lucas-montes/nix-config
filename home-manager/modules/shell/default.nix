@@ -26,9 +26,11 @@ in {
       notes = "cd $HOME/Notes/ && vim .";
       venv = "nix-shell --command zsh";
       tx = "_new_named_session";
+      nrp = "_new_project";
       gpj = "_fzf_tmux ~/Projects/";
       dw-venv = "venv -p yt-dlp";
       dwm = "yt-dlp -x --audio-format mp3 -o '$HOME/Downloads/music/%(title)s.%(ext)s'";
+      lz = "lazygit";
     };
 
     plugins = [

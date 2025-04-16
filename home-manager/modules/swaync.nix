@@ -37,36 +37,8 @@
               command = "nm-connection-editor";
             }
             {
-              label = "";
-              command = "blueman-manager";
-            }
-            {
               label = "";
-              command = "nwg-look";
-            }
-            {
-              label = "";
-              command = "exo-open ~/ConfigHub";
-            }
-            {
-              label = "";
-              command = "ymuse";
-            }
-            {
-              label = "";
-              command = "orage";
-            }
-            {
-              label = "";
-              command = "evince";
-            }
-            {
-              label = "";
-              command = "mpv";
-            }
-            {
-              label = "";
-              command = "audacious";
+              command = "blueman-manager";
             }
             {
               label = "";

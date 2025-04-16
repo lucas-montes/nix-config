@@ -23,7 +23,6 @@
       in {
         devShells.default = with pkgs;
           mkShell {
-            name = "stefn";
             buildInputs = [
               pkg-config
               rust-bin.stable.latest.default
