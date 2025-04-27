@@ -18,5 +18,6 @@
     ./tmux.nix
     ./ghostty.nix
     ./vscode.nix
+    ./waybar
   ];
 }

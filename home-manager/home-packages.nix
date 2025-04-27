@@ -2,19 +2,25 @@
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     audacity
+    nomacs
+    xournalpp
+    nautilus
+
+    rpi-imager
+    sqlitestudio
+
     usbutils
     dconf
     openssl
     ripgrep
-    xournalpp
+    dstat
     unzip
-    nautilus
     zip
-    rpi-imager
-    sqlitestudio
+
+    neofetch
+
     wl-clipboard
     grimblast
-    neofetch
     playerctl
     libnotify
     pavucontrol
