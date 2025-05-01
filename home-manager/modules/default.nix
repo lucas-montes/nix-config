@@ -19,5 +19,6 @@
     ./ghostty.nix
     ./vscode.nix
     ./waybar
+    ./zathura.nix
   ];
 }

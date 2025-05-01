@@ -23,17 +23,17 @@
       "image/webp" = "nomacs.desktop";
       "image/png" = "nomacs.desktop";
       "image/gif" = "nomacs.desktop";
-      "x-scheme-handler/http" = "brave.desktop";
-      "x-scheme-handler/https" = "brave.desktop";
-      "text/html" = "brave.desktop";
-      # "application/pdf" = "zathura.desktop";
-      "x-scheme-handler/chrome" = "brave.desktop";
-      "application/x-extension-htm" = "brave.desktop";
-      "application/x-extension-html" = "brave.desktop";
-      "application/x-extension-shtml" = "brave.desktop";
-      "application/xhtml+xml" = "brave.desktop";
-      "application/x-extension-xhtml" = "brave.desktop";
-      "application/x-extension-xht" = "brave.desktop";
+      "x-scheme-handler/http" = "brave-browser.desktop";
+      "x-scheme-handler/https" = "brave-browser.desktop";
+      "text/html" = "brave-browser.desktop";
+      "application/pdf" = "zathura.desktop";
+      "x-scheme-handler/chrome" = "brave-browser.desktop";
+      "application/x-extension-htm" = "brave-browser.desktop";
+      "application/x-extension-html" = "brave-browser.desktop";
+      "application/x-extension-shtml" = "brave-browser.desktop";
+      "application/xhtml+xml" = "brave-browser.desktop";
+      "application/x-extension-xhtml" = "brave-browser.desktop";
+      "application/x-extension-xht" = "brave-browser.desktop";
     };
   };
 }

@@ -5,6 +5,9 @@
     nomacs
     xournalpp
     nautilus
+    nemo
+    dolphin
+    pcmanfm
 
     rpi-imager
     sqlitestudio
