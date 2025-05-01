@@ -11,10 +11,6 @@ in {
     settings = {
       vim = {
         notes.todo-comments.enable = true;
-        assistant.copilot = {
-          enable = true;
-          cmp.enable = true;
-        };
         options = {
           wrap = false;
           shiftwidth = 4;
