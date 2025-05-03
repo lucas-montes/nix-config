@@ -3,17 +3,18 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nvf = {
-    #   url = "github:notashelf/nvf";
-    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
-    # };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    nvf = {
+      url = "github:notashelf/nvf";
+    };
 
     stylix = {
       url = "github:danth/stylix/release-24.11";
@@ -29,13 +30,17 @@
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     user = "lucas";
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = import nixpkgs {
+      inherit system;
+      # overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
+    };
     hosts = [
       {
         hostname = "luctop";
         stateVersion = "24.11";
       }
     ];
+
 
     makeSystem = {
       hostname,

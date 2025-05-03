@@ -87,7 +87,8 @@ vim.g.netrw_banner=0
 -- [[ Basic Keymaps ]]
 
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, { desc = 'Format current buffer with LSP' })
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = 'Toggle Undotree' })
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`

@@ -9,7 +9,8 @@
     ./fzf.nix
     ./lazygit.nix
     ./mime.nix
-    ./neovim
+    # ./neovim
+    ./nvf.nix
     ./rofi.nix
     ./shell
     ./starship.nix

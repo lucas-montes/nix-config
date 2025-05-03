@@ -6,7 +6,6 @@
     xournalpp
     nautilus
     nemo
-    dolphin
     pcmanfm
 
     rpi-imager
@@ -16,11 +15,9 @@
     dconf
     openssl
     ripgrep
-    dstat
+
     unzip
     zip
-
-    neofetch
 
     wl-clipboard
     grimblast

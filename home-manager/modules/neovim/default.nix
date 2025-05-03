@@ -39,10 +39,9 @@ in {
 
       neodev-nvim
 
-      nvim-cmp
       {
         plugin = nvim-cmp;
-        #config = toLuaFile ./nvim/plugin/cmp.lua;
+        config = fromPlugin "cmp";
       }
 
       {

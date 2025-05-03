@@ -1,15 +1,17 @@
 {
   config,
   inputs,
+  pkgs,
   ...
 }: let
   inherit (config.lib.stylix) colors;
 in {
-  imports = [inputs.nvf.homeManagerModules.nvf];
+  imports = [inputs.nvf.homeManagerModules.default];
   programs.nvf = {
     enable = true;
     settings = {
       vim = {
+        package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
         notes.todo-comments.enable = true;
         options = {
           wrap = false;
