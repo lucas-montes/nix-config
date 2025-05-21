@@ -1,41 +1,61 @@
-{
+{lib, ...}: {
   programs.waybar = {
     enable = true;
-    style = ./style.css;
+    style = lib.mkAfter (builtins.readFile ./style.css);
     settings = [
       {
         "layer" = "top";
         "position" = "top";
         modules-left = [
+          "custom/yapbar"
         ];
         modules-center = [
           "clock"
         ];
         modules-right = [
+          "group/hardware"
+          "network"
+          "hyprland/language"
+          "battery"
         ];
-        "custom/launcher" = {
-          "format" = " ";
-          "on-click" = "pkill rofi || rofi2";
-          "on-click-middle" = "exec default_wall";
-          "on-click-right" = "exec wallpaper_random";
-          "tooltip" = false;
+        "hyprland/language" = {
+          format = "{short} {variant}";
         };
-        "custom/cava-internal" = {
-          "exec" = "sleep 1s && cava-internal";
+        "custom/yapbar" = {
+          exec = "$HOME/Projects/waybar-rusty/target/debug/yapbar";
+          format = "  {}";
+          interval = 1;
+          # "on-click" = "pkill rofi || rofi2";
+          # "on-click-middle" = "exec default_wall";
+          # "on-click-right" = "exec wallpaper_random";
           "tooltip" = false;
+          "return-type" = "json";
         };
-        "pulseaudio" = {
-          "scroll-step" = 1;
-          "format" = "{icon} {volume}%";
-          "format-muted" = "󰖁 Muted";
-          "format-icons" = {
-            "default" = ["" "" ""];
+
+        battery = {
+          #bat = "BAT2";
+          interval = 60;
+
+          states = {
+            warning = 30;
+            critical = 15;
           };
-          "on-click" = "pamixer -t";
-          "tooltip" = false;
+
+          format = "{capacity}% {icon}";
+
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
+
+          max-length = 25;
         };
+
         "clock" = {
-          format = "  {:%A - %B %d, %Y - %R}";
+          format = "  {:%A - %B | %d/%m/%Y - %R}";
           tooltip = true;
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
@@ -64,36 +84,57 @@
           "interval" = 1;
           "format" = "󰍛 {usage}%";
         };
-        "mpd" = {
-          "max-length" = 25;
-          "format" = "<span foreground='#bb9af7'></span> {title}";
-          "format-paused" = " {title}";
-          "format-stopped" = "<span foreground='#bb9af7'></span>";
-          "format-disconnected" = "";
-          "on-click" = "mpc --quiet toggle";
-          "on-click-right" = "mpc update; mpc ls | mpc add";
-          "on-click-middle" = "kitty --class='ncmpcpp' ncmpcpp ";
-          "on-scroll-up" = "mpc --quiet prev";
-          "on-scroll-down" = "mpc --quiet next";
-          "smooth-scrolling-threshold" = 5;
-          "tooltip-format" = "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})";
+        "disk" = {
+          "interval" = 30;
+          "format" = "D {percentage_used}% ";
+          "path" = "/";
+          "on-click" = "kitty -e htop";
+        };
+        "temperature" = {
+          "hwmon-path-abs" = "/sys/devices/platform/coretemp.0/hwmon";
+          "input-filename" = "temp1_input";
+          "critical-threshold" = 80;
+          "format" = "{icon} {temperatureC}°C";
+          "format-icons" = ["" "" ""];
+        };
+        "group/hardware" = {
+          "orientation" = "horizontal";
+          "modules" = ["cpu" "memory" "disk" "temperature"];
         };
         "network" = {
-          "format-disconnected" = "󰯡 Disconnected";
-          "format-ethernet" = "󰒢 Connected!";
-          "format-linked" = "󰖪 {essid} (No IP)";
-          "format-wifi" = "󰖩 {essid}";
-          "interval" = 1;
-          "tooltip" = false;
-        };
-        "custom/powermenu" = {
-          "format" = "";
-          "on-click" = "pkill rofi || ~/.config/rofi/powermenu/type-3/powermenu.sh";
-          "tooltip" = false;
-        };
-        "tray" = {
-          "icon-size" = 15;
-          "spacing" = 5;
+          format = "{icon} {ipaddr}";
+          format-wifi = "{icon} {signalStrength}%";
+          format-ethernet = "{icon} {ipaddr}";
+          format-linked = " (no IP)";
+          format-disconnected = "󰖪 Disconnected";
+
+          format-icons = {
+            wifi = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"]; # from low to high signal
+            ethernet = "󰈀";
+            linked = "󰈁";
+            disconnected = "󰖪";
+          };
+
+          tooltip = true;
+          tooltip-format = "{ifname}: {ipaddr} via {gwaddr}";
+          tooltip-format-wifi = ''
+            SSID: {essid}
+            Signal: {signalStrength}% ({signaldBm} dBm)
+            IP: {ipaddr}
+            Gateway: {gwaddr}
+            Up: {bandwidthUpBits}bps
+            Down: {bandwidthDownBits}bps
+          '';
+          tooltip-format-ethernet = ''
+            Interface: {ifname}
+            IP: {ipaddr}
+            Gateway: {gwaddr}
+            Up: {bandwidthUpBits}bps
+            Down: {bandwidthDownBits}bps
+          '';
+          tooltip-format-disconnected = "No active connection";
+
+          on-click = "nm-connection-editor"; # Launch NetworkManager GUI
         };
       }
     ];

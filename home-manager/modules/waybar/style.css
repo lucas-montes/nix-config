@@ -1,142 +1,118 @@
+@define-color base alpha(@base00, 0.1);
+@define-color surface alpha(@base00, 0.5);
+@define-color text #cdd6f4;
+@define-color hoverBg alpha(@base04, 1);
+@define-color activeBg alpha(@base07, 1);
+@define-color shadow alpha(@base08, 0.25);
+
 * {
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 12pt;
-  font-weight: bold;
-  border-radius: 8px;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  all: unset;
+  font-size: 1rem;
+  font-weight: 900;
+  font-family:
+    JetBrainsMonoNerdFont,
+    Font Awesome;
+  background-clip: border-box;
+  background: transparent;
 }
-@keyframes blink_red {
+
+button {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 999px;
+  color: @text;
+  box-shadow: 0px 0px 8px 4px @shadow inset;
+  transition:
+    all 50ms cubic-bezier(0.55, 0, 0.28, 1.682),
+    box-shadow 50ms ease-in-out,
+    background-color 200ms ease-in-out;
+}
+
+button:hover {
+  color: @base00;
+  background: @hoverBg;
+}
+
+button.active {
+  color: @base00;
+  background: @activeBg;
+}
+
+tooltip {
+  opacity: 1;
+}
+
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#window {
+  margin-right: 8px;
+}
+
+#custom-yapbar,
+#workspaces,
+#hyprland-language,
+#network,
+#hardware,
+#clock {
+  background-color: @surface;
+  border-radius: 999px;
+  box-shadow: 0px 0px 8px 4px @shadow inset;
+}
+
+#hardware,
+#clock {
+  padding: 0 8px;
+}
+
+#cpu,
+#memory,
+#disk {
+  padding-right: 0.5rem;
+}
+
+#workspaces button {
+  margin-right: 2px;
+}
+
+#workspaces button:last-child {
+  margin-right: 0;
+}
+
+#taskbar {
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes blink {
   to {
-    background-color: rgb(242, 143, 173);
-    color: rgb(26, 24, 38);
+    background-color: @activeBg;
   }
 }
-.warning,
-.critical,
-.urgent {
-  animation-name: blink_red;
-  animation-duration: 1s;
+
+#battery.critical:not(.charging) {
+  background-color: @activeBg;
+  animation-name: blink;
+  animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @activeBg;
+}
+
+label:focus {
+  background-color: @activeBg;
+}
+
 window#waybar {
-  background-color: transparent;
-}
-window > box {
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 5px;
-  background-color: #1e1e2a;
-  padding: 3px;
-  padding-left: 8px;
-  border: 2px none #33ccff;
-}
-#workspaces {
-  padding-left: 0px;
-  padding-right: 4px;
-}
-#workspaces button {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 6px;
-  padding-right: 6px;
-}
-#workspaces button.active {
-  background-color: rgb(181, 232, 224);
-  color: rgb(26, 24, 38);
-}
-#workspaces button.urgent {
-  color: rgb(26, 24, 38);
-}
-#workspaces button:hover {
-  background-color: rgb(248, 189, 150);
-  color: rgb(26, 24, 38);
-}
-tooltip {
-  background: rgb(48, 45, 65);
-}
-tooltip label {
-  color: rgb(217, 224, 238);
-}
-#custom-launcher {
-  font-size: 20px;
-  padding-left: 8px;
-  padding-right: 6px;
-  color: #7ebae4;
-}
-#mode,
-#clock,
-#memory,
-#temperature,
-#cpu,
-#mpd,
-#custom-wall,
-#temperature,
-#backlight,
-#pulseaudio,
-#network,
-#battery,
-#custom-powermenu,
-#custom-cava-internal {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-/* #mode { */
-/* 	margin-left: 10px; */
-/* 	background-color: rgb(248, 189, 150); */
-/*     color: rgb(26, 24, 38); */
-/* } */
-#memory {
-  color: rgb(181, 232, 224);
-}
-#cpu {
-  color: rgb(245, 194, 231);
-}
-#clock {
-  color: rgb(217, 224, 238);
-}
-/* #idle_inhibitor {
-  color: rgb(221, 182, 242);
-}*/
-#custom-wall {
-  color: #33ccff;
-}
-#temperature {
-  color: rgb(150, 205, 251);
-}
-#backlight {
-  color: rgb(248, 189, 150);
-}
-#pulseaudio {
-  color: rgb(245, 224, 220);
-}
-#network {
-  color: #abe9b3;
-}
-#network.disconnected {
-  color: rgb(255, 255, 255);
-}
-#custom-powermenu {
-  color: rgb(242, 143, 173);
-  padding-right: 8px;
-}
-#tray {
-  padding-right: 8px;
-  padding-left: 10px;
-}
-#mpd.paused {
-  color: #414868;
-  font-style: italic;
-}
-#mpd.stopped {
   background: transparent;
-}
-#mpd {
-  color: #c0caf5;
-}
-#custom-cava-internal {
-  font-family: "Hack Nerd Font";
-  color: #33ccff;
 }

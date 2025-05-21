@@ -11,6 +11,8 @@
     rpi-imager
     sqlitestudio
 
+    code-cursor
+
     usbutils
     dconf
     openssl

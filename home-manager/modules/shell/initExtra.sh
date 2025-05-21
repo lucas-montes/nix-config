@@ -3,7 +3,7 @@ _fzf() {
 }
 
 _new_project() {
-    cp -R "$HOME/.dotfiles/templates/rust/{.gitignore,.envrc,flake.nix}" .
+    cp $HOME/.dotfiles/templates/rust/{.gitignore,.envrc,flake.nix} .
 }
 
 _fzf_tmux() {

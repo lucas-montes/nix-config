@@ -11,6 +11,7 @@ in {
     enable = true;
     settings = {
       vim = {
+        navigation = {harpoon = {enable = true;};};
         package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
         notes.todo-comments.enable = true;
         options = {
@@ -75,6 +76,9 @@ in {
           enableTreesitter = true;
           bash.enable = true;
           nix.enable = true;
+          lua.enable = true;
+          clang.enable = true;
+          sql.enable = true;
           rust.enable = true;
           html.enable = true;
           css.enable = true;

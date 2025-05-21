@@ -45,7 +45,7 @@
       rofi.enable = true;
       gtk.enable = true;
       hyprland.enable = false;
-      waybar.enable = false;
+      waybar.enable = true;
     };
 
     fonts = {
@@ -59,6 +59,6 @@
       };
     };
 
-    image = ../../wallpaper.png;
+    image = ../../rusty.webp;
   };
 }
