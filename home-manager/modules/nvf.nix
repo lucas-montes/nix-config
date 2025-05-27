@@ -12,7 +12,6 @@ in {
     settings = {
       vim = {
         navigation = {harpoon = {enable = true;};};
-        package = inputs.nixpkgs-unstable.packages.${pkgs.system}.neovim;
         notes.todo-comments.enable = true;
         options = {
           wrap = false;
@@ -72,7 +71,6 @@ in {
         languages = {
           enableExtraDiagnostics = true;
           enableFormat = true;
-          enableLSP = true;
           enableTreesitter = true;
           bash.enable = true;
           nix.enable = true;

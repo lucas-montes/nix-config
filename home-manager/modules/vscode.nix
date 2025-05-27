@@ -3,6 +3,7 @@
     # programs.vscode.package = pkgs.vscode.fhsWithPackages (ps: with ps; [ rustup zlib openssl.dev pkg-config ]);
 
     enable = true;
+    profiles.default = {
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = false;
     extensions = with pkgs.vscode-extensions;
@@ -69,6 +70,6 @@
       "terminal.integrated.fontSize" = 16.0;
       "update.mode" = "none";
       "update.showReleaseNotes" = false;
-    };
+    };};
   };
 }

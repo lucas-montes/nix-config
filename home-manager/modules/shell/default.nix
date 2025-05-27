@@ -43,6 +43,6 @@ in {
 
     history.size = 10000;
 
-    initExtra = builtins.readFile ./initExtra.sh;
+    initContent = builtins.readFile ./initExtra.sh;
   };
 }

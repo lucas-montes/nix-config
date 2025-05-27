@@ -3,7 +3,7 @@
   inputs,
   ...
 }: {
-  imports = [inputs.stylix.homeManagerModules.stylix];
+  imports = [inputs.stylix.homeModules.stylix];
 
   home.packages = with pkgs; [
     jetbrains-mono
@@ -33,7 +33,7 @@
     };
 
     targets = {
-      alacritty.enable = true;
+      alacritty.enable = false;
       neovim.enable = true;
       vscode.enable = true;
       lazygit.enable = true;
