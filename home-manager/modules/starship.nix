@@ -8,22 +8,22 @@ in {
       enableZshIntegration = true;
       settings = {
         #TODO: reuse from stylix
-        # palette = "dracula";
-        # palettes.dracula = {
-        #   foreground = "#F8F8F2";
-        #   background = "#282A36";
-        #   current_line = "#44475A";
-        #   primary = "#1E1F29";
-        #   box = "#44475A";
-        #   blue = "#6272A4";
-        #   cyan = "#8BE9FD";
-        #   green = "#50FA7B";
-        #   orange = "#FFB86C";
-        #   pink = "#FF79C6";
-        #   purple = "#BD93F9";
-        #   red = "#FF5555";
-        #   yellow = "#F1FA8C";
-        # };
+        palette = "dracula";
+        palettes.dracula = {
+          foreground = "#F8F8F2";
+          background = "#282A36";
+          current_line = "#44475A";
+          primary = "#1E1F29";
+          box = "#44475A";
+          blue = "#6272A4";
+          cyan = "#8BE9FD";
+          green = "#50FA7B";
+          orange = "#FFB86C";
+          pink = "#FF79C6";
+          purple = "#BD93F9";
+          red = "#FF5555";
+          yellow = "#F1FA8C";
+        };
         add_newline = true;
 
         format = lib.strings.concatStrings [

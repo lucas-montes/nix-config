@@ -5,9 +5,9 @@
 }: {
   imports = [inputs.stylix.homeModules.stylix];
 
-  home.packages = with pkgs; [
-    jetbrains-mono
-    font-awesome
+  home.packages = [
+    pkgs.jetbrains-mono
+    pkgs.font-awesome
   ];
 
   stylix = {
@@ -33,19 +33,10 @@
     };
 
     targets = {
-      alacritty.enable = false;
-      neovim.enable = true;
-      vscode.enable = true;
-      lazygit.enable = true;
-      hyprlock.enable = true;
-      swaync.enable = true;
+      nvf.enable = false;
+      starship.enable = false;
       tmux.enable = false;
-      fzf.enable = true;
-      btop.enable = true;
-      rofi.enable = true;
-      gtk.enable = true;
       hyprland.enable = false;
-      waybar.enable = true;
     };
 
     fonts = {
