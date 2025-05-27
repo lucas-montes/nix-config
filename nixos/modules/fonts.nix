@@ -2,13 +2,12 @@
 
 {
   fonts = {
-    packages = with pkgs; [
-      nerdfonts
-      twemoji-color-font
-      fira-code
-      fira-code-symbols
-      font-awesome
-    ];
+    packages = [
+      pkgs.twemoji-color-font
+      pkgs.fira-code
+      pkgs.fira-code-symbols
+      pkgs.font-awesome
+    ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
   };
 
 }
