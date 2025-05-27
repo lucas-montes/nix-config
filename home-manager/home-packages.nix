@@ -5,7 +5,6 @@
     nomacs
     xournalpp
     nautilus
-    alacritty
 
     rpi-imager
     sqlitestudio

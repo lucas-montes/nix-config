@@ -12,7 +12,7 @@ in {
     settings = {
       vim = {
         navigation = {harpoon = {enable = true;};};
-        package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
+        package = inputs.nixpkgs-unstable.packages.${pkgs.system}.neovim;
         notes.todo-comments.enable = true;
         options = {
           wrap = false;

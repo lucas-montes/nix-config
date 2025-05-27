@@ -4,7 +4,7 @@
     options = {
       "recolor" = "true";
       "adjust-open" = "best";
-      "guioptions" = "none";
+      #    "guioptions" = "none";
     };
     mappings = {
       "i" = "recolor"; # toggle recoloring

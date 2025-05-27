@@ -1,6 +1,6 @@
 {
-  programs.ghostty = {
-    enable = true;
+  programs = {ghostty = {
+    enable = false;
     installVimSyntax = true;
     enableZshIntegration = true;
     enableBashIntegration = true;
@@ -19,5 +19,7 @@
       auto-update = "off";
       confirm-close-surface = false;
     };
+  };
+  alacritty.enable = true;
   };
 }

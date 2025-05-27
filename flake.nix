@@ -3,14 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
-    # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     nvf = {
       url = "github:notashelf/nvf";
@@ -32,7 +30,6 @@
     user = "lucas";
     pkgs = import nixpkgs {
       inherit system;
-      # overlays = [ inputs.neovim-nightly-overlay.overlays.default ];
     };
     hosts = [
       {

@@ -33,7 +33,7 @@
     };
 
     targets = {
-      ghostty.enable = true;
+      alacritty.enable = true;
       neovim.enable = true;
       vscode.enable = true;
       lazygit.enable = true;
