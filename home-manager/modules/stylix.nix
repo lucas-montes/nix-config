@@ -16,25 +16,25 @@
     base16Scheme = {
       base00 = "000000"; #background default: 282936
       base01 = "333547";
-      base02 = "4d4f68";
-      base03 = "626483";
+      base02 = "44475a";
+      base03 = "6272a4";
       base04 = "62d6e8";
-      base05 = "e9e9f4"; #foreground
+      base05 = "f8f8f2"; #foreground
       base06 = "f1f2f8";
       base07 = "f7f7fb";
-      base08 = "ea51b2";
-      base09 = "b45bcf";
-      base0A = "00f769";
-      base0B = "ebff87";
-      base0C = "a1efe4";
-      base0D = "62d6e8";
-      base0E = "b45bcf";
+      base08 = "ff5555";
+      base09 = "ffb86c";
+      base0A = "ebff87";
+      base0B = "50fa7b";
+      base0C = "8be9fd";
+      base0D = "b45bcf";
+      base0E = "ea51b2";
       base0F = "00f769";
     };
 
     targets = {
       nvf.enable = false;
-      starship.enable = false;
+      starship.enable = true;
       tmux.enable = false;
       hyprland.enable = false;
     };

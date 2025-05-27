@@ -1,5 +1,5 @@
 {lib, ...}: let
-  createAllComponent = color: symbol: value: "[─](fg:current_line)[](fg:${color})[${symbol} ](fg:primary bg:${color})[](fg:${color} bg:box)[ ${value}](fg:foreground bg:box)[](fg:box)";
+  createAllComponent = color: symbol: value: "[─](fg:base02)[](fg:${color})[${symbol} ](fg:base01 bg:${color})[](fg:${color} bg:base02)[ ${value}](fg:base05 bg:base02)[](fg:base02)";
   createComponent = color: value: createAllComponent color "$symbol" value;
 in {
   programs = {
@@ -7,27 +7,10 @@ in {
       enable = true;
       enableZshIntegration = true;
       settings = {
-        #TODO: reuse from stylix
-        palette = "dracula";
-        palettes.dracula = {
-          foreground = "#F8F8F2";
-          background = "#282A36";
-          current_line = "#44475A";
-          primary = "#1E1F29";
-          box = "#44475A";
-          blue = "#6272A4";
-          cyan = "#8BE9FD";
-          green = "#50FA7B";
-          orange = "#FFB86C";
-          pink = "#FF79C6";
-          purple = "#BD93F9";
-          red = "#FF5555";
-          yellow = "#F1FA8C";
-        };
         add_newline = true;
 
         format = lib.strings.concatStrings [
-          "[╭](fg:current_line)"
+          "[╭](fg:base02)"
           "$username"
           "$directory"
 
@@ -44,7 +27,7 @@ in {
 
         fill = {
           symbol = "─";
-          style = "fg:current_line";
+          style = "fg:base02";
         };
 
         username = {
@@ -55,7 +38,7 @@ in {
 
         directory = {
           disabled = false;
-          format = createAllComponent "pink" "" "$path";
+          format = createAllComponent "bright-blue" "" "$path";
           home_symbol = "~";
           truncate_to_repo = false;
           truncation_length = 0;
@@ -82,7 +65,7 @@ in {
           detect_folders = [];
         };
         python = {
-          format = createComponent "blue" "$pyenv_prefix($version )(($virtualenv) )";
+          format = createComponent "green" "$pyenv_prefix($version )(($virtualenv) )";
           python_binary = [
             "python"
             "python3"
@@ -121,7 +104,7 @@ in {
         };
 
         character = {
-          format = "[╰─$symbol](fg:current_line) ";
+          format = "[╰─$symbol](fg:base02) ";
           success_symbol = "[λ](fg:bold white)";
           error_symbol = "[×](fg:bold red)";
         };

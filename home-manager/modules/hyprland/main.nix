@@ -22,6 +22,10 @@
         layout = "dwindle";
       };
 
+      cursor = {
+        no_hardware_cursors = true;
+      };
+
       decoration = {
         rounding = 10;
         active_opacity = 1.0;
