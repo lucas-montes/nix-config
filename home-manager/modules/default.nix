@@ -17,7 +17,7 @@
     ./stylix.nix
     ./swaync.nix
     ./tmux.nix
-    ./ghostty.nix
+    #    ./ghostty.nix
     ./vscode.nix
     ./waybar
     ./zathura.nix

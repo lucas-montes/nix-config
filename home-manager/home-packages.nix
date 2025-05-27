@@ -5,16 +5,12 @@
     nomacs
     xournalpp
     nautilus
-    nemo
-    pcmanfm
+    alacritty
 
     rpi-imager
     sqlitestudio
 
-    code-cursor
-
     usbutils
-    dconf
     openssl
     ripgrep
 

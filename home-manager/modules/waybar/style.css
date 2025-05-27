@@ -1,118 +1,66 @@
-@define-color base alpha(@base00, 0.1);
-@define-color surface alpha(@base00, 0.5);
-@define-color text #cdd6f4;
-@define-color hoverBg alpha(@base04, 1);
-@define-color activeBg alpha(@base07, 1);
-@define-color shadow alpha(@base08, 0.25);
-
 * {
   all: unset;
-  font-size: 1rem;
-  font-weight: 900;
   font-family:
     JetBrainsMonoNerdFont,
     Font Awesome;
-  background-clip: border-box;
-  background: transparent;
+  font-weight: bold;
+  min-height: 0;
+  font-size: 100%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  padding: 0px;
+  margin-top: 1px;
+  margin-bottom: 1px;
 }
 
-button {
-  min-width: 32px;
-  min-height: 32px;
-  border-radius: 999px;
-  color: @text;
-  box-shadow: 0px 0px 8px 4px @shadow inset;
-  transition:
-    all 50ms cubic-bezier(0.55, 0, 0.28, 1.682),
-    box-shadow 50ms ease-in-out,
-    background-color 200ms ease-in-out;
+window#waybar {
+  background: rgba(0, 0, 0, 0);
 }
 
-button:hover {
-  color: @base00;
-  background: @hoverBg;
-}
-
-button.active {
-  color: @base00;
-  background: @activeBg;
+window#waybar.hidden {
+  opacity: 0.5;
 }
 
 tooltip {
-  opacity: 1;
+  background: #24273a;
+  border-radius: 8px;
 }
 
-window#waybar.empty #window {
-  background-color: transparent;
+tooltip label {
+  color: #cad3f5;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
-#window {
-  margin-right: 8px;
+.modules-right,
+.modules-center,
+.modules-left {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 0px solid #b4befe;
+  border-radius: 8px;
 }
 
 #custom-yapbar,
-#workspaces,
-#hyprland-language,
+#language,
 #network,
+#battery,
 #hardware,
 #clock {
-  background-color: @surface;
-  border-radius: 999px;
-  box-shadow: 0px 0px 8px 4px @shadow inset;
-}
-
-#hardware,
-#clock {
-  padding: 0 8px;
-}
-
-#cpu,
-#memory,
-#disk {
-  padding-right: 0.5rem;
-}
-
-#workspaces button {
-  margin-right: 2px;
-}
-
-#workspaces button:last-child {
-  margin-right: 0;
-}
-
-#taskbar {
-  font-weight: normal;
-  font-style: normal;
+  color: #dfdfdf;
+  padding: 0px 10px;
+  border-radius: 8px;
 }
 
 @keyframes blink {
   to {
-    background-color: @activeBg;
+    background-color: #000000;
   }
 }
 
 #battery.critical:not(.charging) {
-  background-color: @activeBg;
+  color: #f53c3c;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-}
-
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-  background-color: @activeBg;
-}
-
-label:focus {
-  background-color: @activeBg;
-}
-
-window#waybar {
-  background: transparent;
 }

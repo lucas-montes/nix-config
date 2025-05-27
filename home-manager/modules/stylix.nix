@@ -59,6 +59,6 @@
       };
     };
 
-    image = ../../rusty.webp;
+    image = ../../wallpaper.png;
   };
 }

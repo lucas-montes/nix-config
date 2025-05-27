@@ -18,30 +18,27 @@
           "hyprland/language"
           "battery"
         ];
+
         "hyprland/language" = {
           format = "{short} {variant}";
         };
+
         "custom/yapbar" = {
           exec = "$HOME/Projects/waybar-rusty/target/debug/yapbar";
           format = "  {}";
           interval = 1;
-          # "on-click" = "pkill rofi || rofi2";
-          # "on-click-middle" = "exec default_wall";
-          # "on-click-right" = "exec wallpaper_random";
-          "tooltip" = false;
-          "return-type" = "json";
+          tooltip = true;
+          return-type = "json";
         };
 
         battery = {
-          #bat = "BAT2";
           interval = 60;
-
           states = {
             warning = 30;
             critical = 15;
           };
 
-          format = "{capacity}% {icon}";
+          format = "{icon} {capacity}%";
 
           format-icons = [
             ""
@@ -73,34 +70,37 @@
             };
           };
         };
-        "memory" = {
+        memory = {
           "interval" = 1;
           "format" = "󰻠 {percentage}%";
           "states" = {
             "warning" = 85;
           };
         };
-        "cpu" = {
+
+        cpu = {
           "interval" = 1;
           "format" = "󰍛 {usage}%";
         };
-        "disk" = {
+
+        disk = {
           "interval" = 30;
           "format" = "D {percentage_used}% ";
           "path" = "/";
-          "on-click" = "kitty -e htop";
         };
+
         "temperature" = {
           "hwmon-path-abs" = "/sys/devices/platform/coretemp.0/hwmon";
           "input-filename" = "temp1_input";
           "critical-threshold" = 80;
-          "format" = "{icon} {temperatureC}°C";
-          "format-icons" = ["" "" ""];
+          "format" = " {temperatureC}°C";
         };
+
         "group/hardware" = {
           "orientation" = "horizontal";
           "modules" = ["cpu" "memory" "disk" "temperature"];
         };
+
         "network" = {
           format = "{icon} {ipaddr}";
           format-wifi = "{icon} {signalStrength}%";
