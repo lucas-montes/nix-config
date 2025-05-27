@@ -19,7 +19,7 @@ in {
     extraPackages = with pkgs; [
       lua-language-server
       nixd
-            alejandra
+      alejandra
       xclip
       wl-clipboard
     ];
@@ -29,7 +29,7 @@ in {
       which-key-nvim
       {
         plugin = nvim-lspconfig;
-               config = fromPlugin "lsp";
+        config = fromPlugin "lsp";
       }
 
       {
@@ -68,18 +68,16 @@ in {
           p.tree-sitter-lua
           p.tree-sitter-python
           p.tree-sitter-json
-           p.tree-sitter-rust
+          p.tree-sitter-rust
         ]);
-       config = fromPlugin "treesitter";
+        config = fromPlugin "treesitter";
       }
 
       vim-nix
-
     ];
 
     extraLuaConfig = ''
       ${builtins.readFile ./config/options.lua}
     '';
-
   };
 }

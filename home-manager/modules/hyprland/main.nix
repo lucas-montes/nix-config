@@ -4,7 +4,7 @@
     settings = {
       monitor = ",preferred,auto,1";
       "$mainMod" = "SUPER";
-      "$terminal" = "alacritty";
+      "$terminal" = "ghostty";
       "$fileManager" = "nautilus";
       "$menu" = "rofi";
       "$browser" = "brave";

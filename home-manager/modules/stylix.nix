@@ -21,20 +21,18 @@
       base04 = "62d6e8";
       base05 = "f8f8f2"; #foreground
       base06 = "f1f2f8";
-      base07 = "f7f7fb";
-      base08 = "ff5555";
-      base09 = "ffb86c";
-      base0A = "ebff87";
-      base0B = "50fa7b";
-      base0C = "8be9fd";
+      base07 = "f3f981";
+      base08 = "e176ba";
+      base09 = "8be9fd";
+      base0A = "51d6f4";
+      base0B = "6450fa";
+      base0C = "ebff87";
       base0D = "b45bcf";
-      base0E = "ea51b2";
-      base0F = "00f769";
+      base0E = "00f769";
+      base0F = "ff5555";
     };
 
     targets = {
-      nvf.enable = false;
-      starship.enable = true;
       tmux.enable = false;
       hyprland.enable = false;
     };

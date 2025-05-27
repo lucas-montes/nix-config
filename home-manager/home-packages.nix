@@ -1,28 +1,28 @@
 {pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
-  home.packages = with pkgs; [
-    audacity
-    nomacs
-    xournalpp
-    nautilus
+  home.packages = [
+    pkgs.audacity
+    pkgs.nomacs
+    pkgs.xournalpp
+    pkgs.nautilus
 
-    rpi-imager
-    sqlitestudio
+    pkgs.rpi-imager
+    pkgs.sqlitestudio
 
-    usbutils
-    openssl
-    ripgrep
+    pkgs.usbutils
+    pkgs.openssl
+    pkgs.ripgrep
 
-    unzip
-    zip
+    pkgs.unzip
+    pkgs.zip
 
-    wl-clipboard
-    grimblast
-    playerctl
-    libnotify
-    pavucontrol
-    brightnessctl
-    pulseaudio
-    networkmanagerapplet
+    pkgs.wl-clipboard
+    pkgs.grimblast
+    pkgs.playerctl
+    pkgs.libnotify
+    pkgs.pavucontrol
+    pkgs.brightnessctl
+    pkgs.pulseaudio
+    pkgs.networkmanagerapplet
   ];
 }
