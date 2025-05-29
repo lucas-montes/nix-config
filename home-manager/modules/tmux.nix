@@ -4,11 +4,8 @@
     baseIndex = 1;
     keyMode = "vi";
     escapeTime = 0;
-    # Force tmux to use /tmp for sockets (WSL2 compat)
-    secureSocket = false;
     plugins = [
       pkgs.tmuxPlugins.better-mouse-mode
-      pkgs.tmuxPlugins.catppuccin
     ];
 
     extraConfig = ''
@@ -21,21 +18,32 @@
       bind-key j select-pane -D
       bind-key k select-pane -U
       bind-key l select-pane -R
-      set -g @catppuccin_window_left_separator ""
-      set -g @catppuccin_window_right_separator " "
-      set -g @catppuccin_window_middle_separator " █"
-      set -g @catppuccin_window_number_position "right"
-      set -g @catppuccin_window_default_fill "number"
-      set -g @catppuccin_window_default_text "#W"
-      set -g @catppuccin_window_current_fill "number"
-      set -g @catppuccin_window_current_text "#W"
-      set -g @catppuccin_status_modules_right "session"
-      set -g @catppuccin_status_left_separator  " "
-      set -g @catppuccin_status_right_separator ""
-      set -g @catppuccin_status_fill "icon"
-      set -g @catppuccin_status_connect_separator "no"
-      set -g @catppuccin_directory_text "#{pane_current_path}"
-      set -g @catppuccin_status_background "#000000"
+
+      # Plugin name: tmux-minimal-rounded
+
+      # Top status bar
+      set-option -g status-position top
+
+      # Background and font
+      set-option -g status-bg "#000000"
+      set-option -g status-fg "#ffffff"
+      set-option -g status-style "bg=#000000,fg=#ffffff"
+
+      # Rounded separators and info
+      set-option -g status-left "#S"
+      set-option -g status-right "#{pane_index} | #{pane_current_command}"
+
+      # Style for window list
+      setw -g window-status-format "#I:#W"
+      setw -g window-status-current-format "#[bold] #I:#W #[nobold]"
+      setw -g window-status-current-style "bg=#44475a,fg=#f8f8f2"
+
+      # Message styling (optional)
+      set-option -g message-style "fg=#00ffff,bg=#222222,align=centre"
+      set-option -g message-command-style "fg=#00ffff,bg=#222222,align=centre"
+
+      # Copy mode highlight
+      set-option -g mode-style "bg=#44475a,bold"
     '';
   };
 }

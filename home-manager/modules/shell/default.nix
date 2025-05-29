@@ -22,7 +22,7 @@ in {
       ro = "sudo nixos-rebuild switch --flake";
       ru = "home-manager switch --flake";
       es = "vim ${dotfiles}";
-      rs = "ru ${dotfiles} && source $HOME/.zshrc";
+      rs = "ru ${dotfiles} && source $HOME/.zshrc && tmux source $HOME/.config/tmux/tmux.conf";
       notes = "cd $HOME/Notes/ && vim .";
       venv = "nix-shell --command zsh";
       tx = "_new_named_session";
