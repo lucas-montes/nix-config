@@ -24,26 +24,76 @@
       # Top status bar
       set-option -g status-position top
 
-      # Background and font
-      set-option -g status-bg "#000000"
-      set-option -g status-fg "#ffffff"
-      set-option -g status-style "bg=#000000,fg=#ffffff"
 
-      # Rounded separators and info
-      set-option -g status-left "#S"
-      set-option -g status-right "#{pane_index} | #{pane_current_command}"
+      set-option -g default-terminal "screen-256color"
+      set-option -ga terminal-overrides ",xterm-256color:Tc"
 
-      # Style for window list
-      setw -g window-status-format "#I:#W"
-      setw -g window-status-current-format "#[bold] #I:#W #[nobold]"
-      setw -g window-status-current-style "bg=#44475a,fg=#f8f8f2"
 
-      # Message styling (optional)
-      set-option -g message-style "fg=#00ffff,bg=#222222,align=centre"
-      set-option -g message-command-style "fg=#00ffff,bg=#222222,align=centre"
+      base="#1e1e2e"
+      crust="#11111b"
+
+      # Text colors
+      text="#cdd6f4"
+      subtext0="#a6adc8"
+
+      blue="#89b4fa"
+      green="#a6e3a1"
+      yellow="#f9e2af"
+      peach="#fab387"
+      red="#f38ba8"
+      mauve="#cba6f7"
+
+      # Status bar background and foreground
+      set-option -g status-style "bg=$base,fg=$text"
+      set-option -g status-left-length 40
+      set-option -g status-right-length 100
+
+      # Left side: Session name with rounded style
+      set-option -g status-left "#[bg=$blue,fg=$crust,bold] #S #[bg=$base,fg=$blue]"
+      # set-option -g status-left "#S" previous
+
+      # Right side: Time and date with
+      set-option -g status-right "#[fg=$peach]#[bg=$peach,fg=$crust] %H:%M #[bg=$base,fg=$peach]#[fg=$green]#[bg=$green,fg=$crust] %d-%b #[bg=$base,fg=$green]"
+      # set-option -g status-right "#{pane_index} | #{pane_current_command}" # previous
+
+
+      # Window status format (inactive windows)
+      setw -g window-status-format "#[fg=$subtext0] #I:#W#{?window_zoomed_flag, ,} "
+      # setw -g window-status-format "#I:#W" #previous
+
+      # Current window status format (active window)
+      setw -g window-status-current-format "#[bg=$mauve,fg=$crust,bold] #I:#W#{?window_zoomed_flag, ,} #[bg=$base,fg=$mauve]"
+      # setw -g window-status-current-format "#[bold] #I:#W #[nobold]" #previous
+
+      # setw -g window-status-current-style "bg=#44475a,fg=#f8f8f2"
+
+      # Window status separator
+      setw -g window-status-separator ""
+
+      # Pane borders
+      set-option -g pane-border-style "fg=$surface0"
+      set-option -g pane-active-border-style "fg=$blue"
+
+      # Message styling
+      set-option -g message-style "bg=$blue,fg=$crust,bold"
+      set-option -g message-command-style "bg=$red,fg=$crust,bold"
+
+      # # Message styling (previous)
+      # set-option -g message-style "fg=#00ffff,bg=#222222,align=centre"
+      # set-option -g message-command-style "fg=#00ffff,bg=#222222,align=centre"
+
 
       # Copy mode highlight
-      set-option -g mode-style "bg=#44475a,bold"
+      set-option -g mode-style "bg=$yellow,fg=$crust,bold"
+
+      # Clock mode color
+      setw -g clock-mode-colour "$blue"
+
+      # Bell styling
+      setw -g window-status-bell-style "bg=$red,fg=$crust,bold"
+
+      # Activity styling
+      setw -g window-status-activity-style "bg=$yellow,fg=$crust,bold"
     '';
   };
 }

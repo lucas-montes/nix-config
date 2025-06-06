@@ -3,7 +3,6 @@
     ./browser.nix
     ./btop.nix
     ./dev.nix
-    ./git.nix
     ./gtk.nix
     ./hyprland
     ./fzf.nix
@@ -19,6 +18,7 @@
     ./terminal.nix
     ./tmux.nix
     ./vscode.nix
+    ./vcs.nix
     ./waybar
     ./zathura.nix
   ];

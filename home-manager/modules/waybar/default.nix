@@ -26,7 +26,7 @@
         "custom/yapbar" = {
           exec = "$HOME/Projects/waybar-rusty/target/debug/yapbar";
           format = "  {}";
-          interval = 1;
+          interval = 1800;
           tooltip = true;
           return-type = "json";
         };
