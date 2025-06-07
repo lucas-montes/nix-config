@@ -33,11 +33,9 @@
 
 
       base="#${config.lib.stylix.colors.base00}"
-      crust="#${config.lib.stylix.colors.base05}"
+      grey="#${config.lib.stylix.colors.base02}"
 
-      # Text colors
       text="#${config.lib.stylix.colors.base05}"
-      subtext0="#${config.lib.stylix.colors.base03}"
 
       blue="#${config.lib.stylix.colors.base0D}"
       green="#${config.lib.stylix.colors.base0F}"
@@ -53,24 +51,17 @@
 
       setw -g window-status-style "fg=$subtext0,bg=$base"
 
-      # Left side: Session name with rounded style
-      set-option -g status-left "#[fg=$blue,bg=$base]#[bg=$blue,fg=$crust,bold] #S #[fg=$blue,bg=$base,nobold]"
-      # set-option -g status-left "#S" previous
-
-      # Right side: Time and date with
-      set-option -g status-right "#[fg=$green,bg=$base]#[bg=$green,fg=$crust] %d-%b #[fg=$peach,bg=$green]#[bg=$peach,fg=$crust] %H:%M #[fg=$peach,bg=$base]"
-      #set-option -g status-right "#{pane_index} | #{pane_current_command}" # previous
-
+      # Left side
+      set-option -g status-left "#[fg=$blue,bg=$base]#[bg=$blue,fg=$base] #[fg=$blue,bg=$grey]#[bg=$grey,fg=$text] #S #[fg=$grey,bg=$base]"
 
       # Window status format (inactive windows)
-      setw -g window-status-format "#[fg=$subtext0] #I:#W#{?window_zoomed_flag, ,} "
-      # setw -g window-status-format "#I:#W" #previous
+      setw -g window-status-format "#[fg=$red,bg=$base]#[bg=$red,fg=$base,bold]#I#[fg=red,bg=$grey]#[bg=$grey,fg=$text] #W #[fg=$grey,bg=$base]"
 
       # Current window status format (active window)
-      setw -g window-status-current-format "#[bg=$mauve,fg=$crust,bold] #I:#W#{?window_zoomed_flag, ,} #[bg=$base,fg=$mauve]"
-      # setw -g window-status-current-format "#[bold] #I:#W #[nobold]" #previous
+      setw -g window-status-current-format "#[fg=$green,bg=$base]#[bg=$green,fg=$base,bold]#I#[fg=$green,bg=$grey]#[bg=$grey,fg=$text] #W #[fg=$grey,bg=$base]"
 
-      setw -g window-status-current-style "fg=$crust,bg=$mauve"
+      # Right side
+      set-option -g status-right "#[fg=$grey,bg=$base]#[bg=$grey,fg=$text] #{pane_current_command} #[fg=$peach,bg=$grey]#[bg=$peach,fg=$base,bold] #{pane_index} #[fg=$peach,bg=$base]"
 
       # Window status separator
       setw -g window-status-separator ""
@@ -80,25 +71,17 @@
       set-option -g pane-active-border-style "fg=$blue"
 
       # Message styling
-      set-option -g message-style "bg=$blue,fg=$crust,bold"
-      set-option -g message-command-style "bg=$red,fg=$crust,bold"
-
-      # # Message styling (previous)
-      # set-option -g message-style "fg=#00ffff,bg=#222222,align=centre"
-      # set-option -g message-command-style "fg=#00ffff,bg=#222222,align=centre"
-
+      set-option -g message-style "bg=$blue,fg=$base,bold"
+      set-option -g message-command-style "bg=$mauve,fg=$text,bold"
 
       # Copy mode highlight
-      set-option -g mode-style "bg=$yellow,fg=$crust,bold"
+      set-option -g mode-style "bg=$yellow,fg=$text,bold"
 
       # Clock mode color
       setw -g clock-mode-colour "$blue"
 
       # Bell styling
-      setw -g window-status-bell-style "bg=$red,fg=$crust,bold"
-
-      # Activity styling
-      setw -g window-status-activity-style "bg=$yellow,fg=$crust,bold"
+      setw -g window-status-bell-style "bg=$red,fg=$text,bold"
     '';
   };
 }
