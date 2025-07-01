@@ -49,13 +49,13 @@
       set-option -g status-left-length 40
       set-option -g status-right-length 100
 
-      setw -g window-status-style "fg=$subtext0,bg=$base"
+      setw -g window-status-style "fg=$grey,bg=$base"
 
       # Left side
       set-option -g status-left "#[fg=$blue,bg=$base]#[bg=$blue,fg=$base] #[fg=$blue,bg=$grey]#[bg=$grey,fg=$text] #S #[fg=$grey,bg=$base]"
 
       # Window status format (inactive windows)
-      setw -g window-status-format "#[fg=$red,bg=$base]#[bg=$red,fg=$base,bold]#I#[fg=red,bg=$grey]#[bg=$grey,fg=$text] #W #[fg=$grey,bg=$base]"
+      setw -g window-status-format "#[fg=$red,bg=$base]#[bg=$red,fg=$base,bold]#I#[fg=$red,bg=$grey]#[bg=$grey,fg=$text] #W #[fg=$grey,bg=$base]"
 
       # Current window status format (active window)
       setw -g window-status-current-format "#[fg=$green,bg=$base]#[bg=$green,fg=$base,bold]#I#[fg=$green,bg=$grey]#[bg=$grey,fg=$text] #W #[fg=$grey,bg=$base]"

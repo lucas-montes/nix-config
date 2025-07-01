@@ -23,7 +23,7 @@
       base06 = "f1f2f8"; #light background (white a little dirty)
       base07 = "f3f981"; #yellow og: f7f7f7b
       base08 = "ea51b2"; #pinker
-      base09 = "b45bcf"; #purple
+      base09 = "d95bff"; #purple
       base0A = "3ff0a9"; #green-blue og: 00f769
       base0B = "ebff87"; #yellow
       base0C = "a1efe4"; #cyan

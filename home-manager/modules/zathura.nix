@@ -2,8 +2,9 @@
   programs.zathura = {
     enable = true;
     options = {
-      "recolor" = "true";
-      "adjust-open" = "best";
+      recolor = "true";
+      adjust-open = "best";
+      selection-clipboard = "clipboard";
       #    "guioptions" = "none";
     };
     mappings = {

@@ -1,9 +1,9 @@
 _fzf() {
-    find $@ \( -name ".direnv" -o -name "venv" -o -name "*cache*" -o -name ".git" -o -name "build" -o -name "target" \) -prune -o -type f -o -type d -print | fzf
+    find $@ \( -name ".direnv" -o -name ".venv" -o -name "*cache*" -o -name ".git" -o -name "build" -o -name "target" \) -prune -o -type f -o -type d -print | fzf
 }
 
 _new_project() {
-    cp $HOME/.dotfiles/templates/rust/{.gitignore,.envrc,flake.nix} .
+    cp "$HOME"/.dotfiles/templates/rust/{.gitignore,.envrc,flake.nix} .
 }
 
 _fzf_tmux() {
