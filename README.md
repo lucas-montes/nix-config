@@ -1,39 +1,12 @@
-# TODO: 
-Declare colors in a var an pass them around 
+# TODO:
+Declare colors in a var an pass them around
 
 look for info [here](https://mynixos.com/home-manager/options/programs.tmux)
- Try setting some of those:
-export XDG_CACHE_HOME="${HOME}/.cache"
-export XDG_CACHE_DIRS="${HOME}/.cache"
-export XDG_CACHE_DIR="${HOME}/.cache"
-export XDG_CONFIG_HOME="${HOME}/.config"
-export XDG_CONFIG_DIRS="${HOME}/.config"
-export XDG_CONFIG_DIR="${HOME}/.config"
-export XDG_DATA_HOME="${HOME}/share"
-export XDG_DATA_DIRS="${HOME}/share"
-export XDG_DATA_DIR="${HOME}/share"
-export XDG_STATE_HOME="${HOME}/state"
-export XDG_STATE_DIRS="${HOME}/state"
-export XDG_STATE_DIR="${HOME}/state"
-export XDG_BIN_HOME="${HOME}/.local/bin"
-export XDG_BIN_DIRS="${HOME}/.local/bin"
-export XDG_BIN_DIR="${HOME}/.local/bin"
-export XDG_RUNTIME_HOME="${HOME}/.run"
-export XDG_RUNTIME_DIRS="${HOME}/.run"
-export XDG_RUNTIME_DIR="${HOME}/.run"
 
-export NIX_STORE_DIR="/nix/store"
-export NIX_DATA_DIR="/nix/var/nix/db"
-export NIX_LOG_DIR="/nix/var/log/nix"
-export NIX_STATE_DIR="/nix/var/nix"
-export NIX_CONF_DIR="${XDG_CONFIG_HOME}/nix"
-export NIX_CONF_DIR="${XDG_CONFIG_DIRS}/nix"
-export NIX_CONF_DIR="${XDG_CONFIG_DIR}/nix"
-export NIX_PROFILES="/nix/var/nix/profiles"
-
+check container [example](https://marijan.pro/posts/2023-08-09-postgres-nixos-container/)
+latest wiki [postgres](https://wiki.nixos.org/wiki/PostgreSQL)
 
 # Notes
 Use smartset key + hotkey 3 to mount keyboadr options
 https://kinesis-ergo.com/wp-content/uploads/Advantage360-SmartSet-KB360-Users-Manual-v10-12-22.pdf
 https://kinesis-ergo.com/wp-content/uploads/Adv360-SmartSet-Direct-Programming-Guide-v12-2-22.pdf
-

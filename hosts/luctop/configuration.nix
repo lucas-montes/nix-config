@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ./local-packages.nix
     ../../nixos/modules
+    ../../services/postgres.nix
   ];
 
   environment.systemPackages = [pkgs.home-manager];

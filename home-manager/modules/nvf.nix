@@ -1,11 +1,4 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
-}: let
-  inherit (config.lib.stylix) colors;
-in {
+{inputs, ...}: {
   imports = [inputs.nvf.homeManagerModules.default];
   programs.nvf = {
     enable = true;

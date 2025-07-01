@@ -1,8 +1,11 @@
-{pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    curl
-    wget
-    git
-    cudatoolkit
+{
+  pkgs,
+  ...
+}: {
+  environment.systemPackages = [
+    pkgs.curl
+    pkgs.wget
+    pkgs.git
+    pkgs.cudatoolkit
   ];
 }
