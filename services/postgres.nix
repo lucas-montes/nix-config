@@ -6,7 +6,6 @@
   pgUser = {
     name = "lucas";
     psswd = "tete2323";
-    psswdmd5 = "md57826a2f6ce4aefaf482c410c18cc71cb";
   };
 in {
   services.pgadmin = {
@@ -19,7 +18,6 @@ in {
     enable = true;
     package = pkgs.postgresql_17;
     enableTCPIP = true;
-    settings.port = 5432;
     authentication = ''
       #type database DBuser origin-address auth-method
       local all       all     trust
@@ -28,7 +26,12 @@ in {
       # ipv6
       host all       ${pgUser.name}     ::/0           md5
     '';
-    ensureUsers = [{name = pgUser.name;}];
+    ensureUsers = [
+      {
+        name = pgUser.name;
+        ensureClauses.superuser = true;
+      }
+    ];
     initialScript = pkgs.writeText "backend-init-script" ''
       CREATE ROLE ${pgUser.name} WITH SUPERUSER LOGIN PASSWORD '${pgUser.psswd}' CREATEDB;
     '';

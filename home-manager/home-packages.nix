@@ -12,6 +12,7 @@
     pkgs.usbutils
     pkgs.openssl
     pkgs.ripgrep
+    pkgs.jq
 
     pkgs.unzip
     pkgs.zip

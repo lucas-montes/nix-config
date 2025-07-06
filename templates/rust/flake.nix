@@ -2,7 +2,7 @@
   description = "A devShell example";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     rust-overlay.url = "github:oxalica/rust-overlay";
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -24,10 +24,10 @@
           extensions = ["rust-src"];
         };
       in {
-        devShells.default = with pkgs;
-          mkShell {
+        devShells.default =
+          pkgs.mkShell {
             buildInputs = [
-              pkg-config
+              pkgs.pkg-config
               rust-bin-custom
             ];
           };
