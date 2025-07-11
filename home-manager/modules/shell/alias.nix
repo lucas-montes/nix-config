@@ -1,5 +1,5 @@
 let
-  dotfiles = "$HOME/.dotfiles";
+  dotfiles = "~/.dotfiles";
 in {
   se = "sudoedit";
   docclean = "docker system prune -a --volumes --force";
@@ -7,15 +7,15 @@ in {
   con-ap = "bluetoothctl connect F8:4D:89:37:41:A0";
   ro = "sudo nixos-rebuild switch --flake";
   ru = "home-manager switch --flake";
-  es = "cd ${dotfiles} && vim .";
-  rs = "ru ${dotfiles} && source $HOME/.zshrc && tmux source $HOME/.config/tmux/tmux.conf";
-  notes = "tx $HOME/Notes/";
+  es = "cd ${dotfiles}; vim .";
+  rs = "ru ${dotfiles}; source $nu.config-path; tmux source ~/.config/tmux/tmux.conf";
+  notes = "tx ~/Notes/";
   venv = "nix-shell --command zsh";
   tx = "_new_named_session";
   nrp = "_new_project";
   gpj = "_fzf_tmux ~/Projects/";
   dw-venv = "venv -p yt-dlp";
-  dwm = "yt-dlp -x --audio-format mp3 -o '$HOME/Downloads/music/%(title)s.%(ext)s'";
+  dwm = "yt-dlp -x --audio-format mp3 -o '~/Downloads/music/%(title)s.%(ext)s'";
   lz = "lazygit";
   open = "xdg-open";
 }
