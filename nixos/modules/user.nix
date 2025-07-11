@@ -6,7 +6,7 @@
   programs.zsh.enable = true;
 
   users = {
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs.nushell;
     users.${user} = {
       isNormalUser = true;
       description = "lucas";
