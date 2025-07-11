@@ -11,6 +11,7 @@
         "file:///home/${user}/Pictures"
         "file:///home/${user}/Downloads/music"
         "file:///home/${user}/Projects"
+        "file:///home/${user}/Notes"
         "file:///data"
       ];
     };
