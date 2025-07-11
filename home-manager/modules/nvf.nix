@@ -60,6 +60,7 @@
           bash.enable = true;
           nix.enable = true;
           lua.enable = true;
+          nu.enable = true;
           clang.enable = true;
           sql.enable = true;
           rust.enable = true;

@@ -2,16 +2,15 @@ let carapace_completer = {|spans|
     carapace $spans.0 nushell ...$spans | from json
 }
 
-def _fzf [...args: string] {
-  find ...$args (-name ".direnv" -o -name ".venv" -o -name "*cache*" -o -name ".git" -o -name "build" -o -name "target") -prune -o -type f -o -type d -print | fzf
-}
+def nufzf [] {$in | each {|i| $i | to json --raw} | str join "\n" | fzf  | from json}
 
 def _new_project [] {
   cp $env.HOME/.dotfiles/templates/rust/{.gitignore,.envrc,flake.nix} .
 }
 
-def _fzf_tmux [...args: string] {
-  _new_named_session (_fzf ...$args)
+def _tmux_has_session [name: string] {
+  tmux list-sessions | grep -q $'^($name):'
+  $env.LAST_EXIT_CODE == 0
 }
 
 def _new_named_session [path: path] {
@@ -41,10 +40,12 @@ def _new_named_session [path: path] {
   }
 }
 
-def _tmux_has_session [name: string] {
-  tmux list-sessions | grep -q $'^($name):'
-  $env.LAST_EXIT_CODE == 0
+def _fzf_tmux [path: path] {
+  _new_named_session (glob $"($path)/**" --depth 1 --no-file | nufzf)
 }
+
+
+
 
 $env.config = {
     show_banner: false,
