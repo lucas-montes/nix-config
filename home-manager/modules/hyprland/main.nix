@@ -11,7 +11,7 @@
 
       "windowrulev2" = ["float, title:^(Picture in picture)$" "pin, title:^(Picture in picture)$"];
 
-      exec-once = ["waybar" "[workspace 1] $browser" "[workspace 2] $terminal" "[workspace 3] $browser"];
+      exec-once = ["waybar" "[workspace 1] $browser" "[workspace 2] $terminal"];
 
       general = {
         gaps_in = 5;

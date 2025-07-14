@@ -9,13 +9,12 @@ in {
   #es = "do {cd ${dotfiles} ; vim .}";
   rs = "home-manager switch --flake ${dotfiles}";
   rt = "tmux source ~/.config/tmux/tmux.conf";
-  notes = "tx ~/Notes/";
-  venv = "nix-shell --command zsh";
   tx = "_new_named_session";
+  notes = "_new_named_session ~/Notes/";
+  venv = "nix-shell --command zsh";
   nrp = "_new_project";
   gpj = "_fzf_tmux ~/Projects";
   dw-venv = "venv -p yt-dlp";
   dwm = "yt-dlp -x --audio-format mp3 -o '~/Downloads/music/%(title)s.%(ext)s'";
   lz = "lazygit";
-  open = "xdg-open";
 }

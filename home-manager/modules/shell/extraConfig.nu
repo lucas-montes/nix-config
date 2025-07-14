@@ -9,8 +9,8 @@ def _new_project [] {
 }
 
 def _tmux_has_session [name: string] {
-  tmux list-sessions | grep -q $'^($name):'
-  $env.LAST_EXIT_CODE == 0
+  let result = (tmux list-sessions | complete)
+  $result.exit_code == 0 and ($result.stdout | lines | find $'($name):' | is-not-empty)
 }
 
 def _new_named_session [path: path] {
@@ -22,21 +22,20 @@ def _new_named_session [path: path] {
   let name = ($path | path basename | str replace -a '.' '_')
   let dir_to_go = ($path | path expand)
 
-  let tmux_running = (pgrep tmux | complete | $in.exit_code == 0)
+  let tmux_running = (tmux has-session 2>/dev/null | complete | $in.exit_code == 0)
 
-  if ($env.TMUX? | is-empty) and not $tmux_running {
+  if ($env.TMUX? | is-empty) and (not $tmux_running) {
     tmux new-session -s $name -c $dir_to_go
-    exit 0
-  }
-
-  if not (_tmux_has_session $name) {
-    tmux new-session -ds $name -c $dir_to_go
-  }
-
-  if ($env.TMUX? | is-empty) {
-    tmux attach-session -t $name
   } else {
-    tmux switch-client -t $name
+    if not (_tmux_has_session $name) {
+      tmux new-session -ds $name -c $dir_to_go | complete
+    }
+
+    if ($env.TMUX? | is-empty) {
+      tmux attach-session -t $name
+    } else {
+      tmux switch-client -t $name
+    }
   }
 }
 
